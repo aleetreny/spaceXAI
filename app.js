@@ -50,6 +50,7 @@
   function initDesk() {
     const roster = document.querySelector("#roster");
     const composer = document.querySelector("#composer");
+    if (window.SameRoomUI) window.SameRoomUI.shell("desk");
     const stored = readDraft();
     const state = stored || {
       ids: ["outpost", "hackradar"],
@@ -58,6 +59,11 @@
       when: "Thursday 5 November 2026, 18:30",
       where: "London — place to confirm",
     };
+
+    const preset = room.byId(param("a"));
+    if (preset && state.ids.indexOf(preset.id) === -1) {
+      state.ids = [preset.id].concat(state.ids).slice(0, 2);
+    }
 
     function persist() {
       try {
@@ -279,7 +285,7 @@
         el("div", { class: "warn" }, [
           el("h1", null, "This page needs two communities."),
           el("p", null, "Go back to the desk and publish a pair."),
-          el("p", null, el("a", { href: "index.html" }, "Back to the desk")),
+          el("p", null, el("a", { href: "desk.html" }, "Back to the desk")),
         ])
       );
       return;
@@ -318,7 +324,7 @@
 
     root.append(
       el("p", { class: "eyebrow noprint" }, [
-        el("a", { href: "index.html" }, "Same Room"),
+        el("a", { href: "desk.html" }, "Same Room"),
         "  ·  live page",
       ]),
       el("article", { class: "sheet" }, [
@@ -339,7 +345,7 @@
           el("p", null, [el("strong", null, a.name + ". "), a.focus]),
           el("p", null, [el("strong", null, b.name + ". "), b.focus]),
           notes
-            ? el("h2", { class: "label" }, "What members actually said")
+            ? el("h2", { class: "label" }, "Pasted on the desk — not verified")
             : el("h2", { class: "label" }, "Ask this. Don’t invent the answer."),
           notes ? el("blockquote", { class: "note" }, notes) : ask,
           el("h2", { class: "label" }, "Also invite"),

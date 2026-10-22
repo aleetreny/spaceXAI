@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Same Room — collab desk</title>
+    <title>Same Room — find the room, pair the people</title>
     <meta
       name="description"
-      content="Pair two communities from the Grok Bot Community Engineering London Hackathon and publish the event page."
+      content="Find venues and communities in London, pair two communities and publish the event page."
     />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <script>
+      /* Old desk links (index.html?a=…) keep working. */
+      if (/[?&](desk(=|&|$)|a=)/.test(location.search)) location.replace("desk.html" + location.search);
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,33 +21,73 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="desk">
-    <header class="top">
-      <p class="eyebrow">
-        Grok Bot Community Engineering London Hackathon · 22 Oct 2026 · Expedite, 7 Lyric Square
-      </p>
-      <h1>Same Room</h1>
-      <p class="lede">
-        Pair two communities from this room. Publish the page before you leave.
-      </p>
-      <p class="freeze">
-        Code freeze on the Luma page is 21:50. UK Hackathons lists 21:15. Confirm which one the room is using.
-      </p>
-    </header>
-    <main class="desk">
-      <section class="roster" id="roster" aria-label="Communities in the room"></section>
-      <section class="composer" id="composer" aria-label="Draft the event page"></section>
+  <body data-page="home">
+    <main class="portal">
+      <section class="hero">
+        <p class="eyebrow">
+          Grok Bot Community Engineering London Hackathon · 22 Oct 2026 · Expedite, 7 Lyric Square
+        </p>
+        <h1>Find the room.<br />Pair the people.</h1>
+        <p class="lede">
+          Ask for a venue or a community in plain words. Every answer shows where it came from, and what is still to confirm.
+        </p>
+        <form class="askbar" action="discover.html" role="search">
+          <label class="sr-only" for="hero-q">Ask Same Room</label>
+          <input id="hero-q" name="ask" type="text" autocomplete="off"
+            placeholder="A quiet space for 80 people, free, next Thursday" />
+          <button type="submit">Ask</button>
+        </form>
+        <p class="hint">Try: “hackathons in london” · “communities for students” · “venue for 100 people”</p>
+        <p class="freeze">
+          Code freeze on the Luma page is 21:50. UK Hackathons lists 21:15. Confirm which one the room is using.
+        </p>
+      </section>
+
+      <section class="paths" aria-label="What you can do">
+        <a class="path" href="discover.html">
+          <span class="path-k">01</span>
+          <strong>Discover</strong>
+          <span>Venues and communities with sources. Unknowns stay marked as unknown.</span>
+        </a>
+        <a class="path" href="desk.html">
+          <span class="path-k">02</span>
+          <strong>Pair two communities</strong>
+          <span>Draft the collab and publish a page the leads can send tonight.</span>
+        </a>
+        <div class="path path-soon">
+          <span class="path-k">03</span>
+          <strong>For organisers</strong>
+          <span>Approved organisers add venues and comments. Next, with Supabase auth.</span>
+        </div>
+      </section>
+
+      <section class="band">
+        <h2 class="label">Next on Luma</h2>
+        <div class="cards" id="next-events"></div>
+        <p class="hint"><a href="discover.html?kind=event">All upcoming events</a> from the public calendars of tonight's communities.</p>
+      </section>
+
+      <section class="band">
+        <h2 class="label">Communities in the room tonight</h2>
+        <div class="pills" id="communities"></div>
+      </section>
+
+      <section class="band">
+        <h2 class="label">What is connected</h2>
+        <ul class="status" id="status"></ul>
+      </section>
     </main>
     <footer class="foot">
-      <p class="meta">Also listed tonight: Zakee Abdi. Not placed on a community card.</p>
+      <p class="meta">Same Room · built at Expedite, London</p>
       <p class="meta">
         <a href="https://luma.com/eveur09a">Event</a>
         ·
         <a href="https://github.com/aleetreny/spaceXAI">Repo</a>
       </p>
     </footer>
-    <noscript>This desk needs JavaScript to pair the communities and publish the page.</noscript>
     <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="luma.js"></script>
+    <script src="assets/portal-api.js"></script>
+    <script src="assets/portal.js"></script>
   </body>
 </html>
