@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Same Room — collab desk</title>
+    <meta
+      name="description"
+      content="Pair two communities from the Grok Bot Community Engineering London Hackathon and publish the event page."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="desk">
+    <header class="top">
+      <p class="eyebrow">
+        Grok Bot Community Engineering London Hackathon · 22 Oct 2026 · Expedite, 7 Lyric Square
+      </p>
+      <h1>Same Room</h1>
+      <p class="lede">
+        Pair two communities from this room. Publish the page before you leave.
+      </p>
+      <p class="freeze">
+        Code freeze on the Luma page is 21:50. UK Hackathons lists 21:15. Confirm which one the room is using.
+      </p>
+    </header>
+    <main class="desk">
+      <section class="roster" id="roster" aria-label="Communities in the room"></section>
+      <section class="composer" id="composer" aria-label="Draft the event page"></section>
+    </main>
+    <footer class="foot">
+      <p class="meta">Also listed tonight: Zakee Abdi. Not placed on a community card.</p>
+      <p class="meta">
+        <a href="https://luma.com/eveur09a">Event</a>
+        ·
+        <a href="https://github.com/aleetreny/spaceXAI">Repo</a>
+      </p>
+    </footer>
+    <noscript>This desk needs JavaScript to pair the communities and publish the page.</noscript>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
