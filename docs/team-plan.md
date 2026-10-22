@@ -15,7 +15,7 @@ Cada chat empieza declarando: "Rol: …; rama: …; checkout: …; tarea: …". 
 
 Si usan T3, abran cada conversación de implementación con su workspace propio seleccionado en la app. Pedir al agente que cambie de carpeta no cambia la asociación del chat con el workspace. Esta PR no ha abierto ni asociado las tres conversaciones.
 
-Primero integren esta PR en `main`, o adopten todos explícitamente el mismo commit de arquitectura mientras está pendiente. Después cada persona crea su rama desde ese punto en su propio clon. Los prefijos permitidos son `feature/catalog-ui`, `feature/catalog-data` y `feature/discovery-agent`; pueden añadir un sufijo con `/` para tareas posteriores.
+Primero integren esta PR en `main`, o adopten todos explícitamente el mismo commit de arquitectura mientras está pendiente. Después cada persona crea su rama desde ese punto en su propio clon. Los prefijos permitidos son `feature/catalog-ui`, `feature/catalog-data` y `feature/discovery-agent`; para tareas posteriores añadan un sufijo con `-`, por ejemplo `feature/catalog-ui-luma`. Git no deja crear `feature/catalog-ui/luma` mientras exista `feature/catalog-ui`.
 
 Antes de abrir PR, ejecuten desde su checkout:
 
