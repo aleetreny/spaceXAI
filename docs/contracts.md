@@ -56,7 +56,9 @@ Supabase contiene `venues`, `communities`, `facts`, `sources`, `hosted_at`, `ven
 
 Los nombres son propuestas para la primera migración, no tablas ya creadas. `communities` y `events` existentes requieren una migración compatible; no se descartan sus IDs ni su contenido.
 
-La ingestión identifica registros por `(provider, external_id)` y conserva la procedencia. Una repetición actualiza el registro en vez de duplicarlo. La memoria Cognee guarda IDs y revisiones públicas; el servidor vuelve a comprobarlos en Supabase.
+La ingestión identifica registros por `(provider, external_id)` y conserva la procedencia. Una repetición actualiza el registro en vez de duplicarlo. El MVP consulta el historial mediante relaciones en Supabase, sin depender de Cognee.
+
+La ampliación opcional de contexto documental requiere un contrato separado antes de implementarse. Debe incluir ID y revisión del documento, fragmento original, procedencia, fecha y permiso de publicación. El servidor verifica la evidencia vigente en Supabase. No se añaden inferencias a los campos confirmados del catálogo.
 
 ## Matriz mínima de acceso
 

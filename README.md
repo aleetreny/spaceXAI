@@ -6,7 +6,7 @@ Repo: https://github.com/aleetreny/spaceXAI
 
 ## Ampliación para el track de venues
 
-El diseño para conectar venues y comunidades en nuestra propia web con búsqueda en lenguaje natural está en [docs/architecture.md](docs/architecture.md). El [contrato de datos y API](docs/contracts.md) y el [reparto entre tres personas con sus agentes](docs/team-plan.md) preparan la implementación. Son especificaciones; las integraciones con Grok, Supabase y Cognee siguen pendientes.
+El diseño para conectar venues y comunidades en nuestra propia web con búsqueda en lenguaje natural está en [docs/architecture.md](docs/architecture.md). El [contrato de datos y API](docs/contracts.md) y el [reparto entre tres personas con sus agentes](docs/team-plan.md) preparan la implementación. El MVP propuesto usa Supabase y Grok. Cognee queda como ampliación opcional, condicionada a demostrar valor con textos reales. Son especificaciones; las integraciones siguen pendientes.
 
 ## Arrancar
 

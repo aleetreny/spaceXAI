@@ -25,11 +25,24 @@ Se conserva la web estática y se añaden páginas de descubrimiento y edición,
 - Web propia: catálogo, filtros, chat público, fichas, fuentes y formulario de organizador. Las fichas y páginas compartibles se consultan en esta web.
 - Supabase: datos canónicos, autenticación, permisos por fila y búsquedas geográficas con PostGIS.
 - Grok: interpreta la consulta y selecciona identificadores sobre resultados autorizados. Las claves permanecen en el servidor.
-- Cognee: memoria derivada de hechos públicos, con identificador y revisión de origen. Ayuda a recuperar relaciones e historial.
 
-Grok y Cognee usan herramientas de lectura como `searchVenues`, `searchCommunities` y `getPublicFacts`. La API valida filtros, límites, identificadores y revisiones. Las tarjetas muestran datos de la base, no afirmaciones factuales redactadas libremente por el modelo. Una cita válida por sí sola no demuestra que una frase sea verdadera.
+Grok usa herramientas de lectura como `searchVenues`, `searchCommunities` y `getPublicFacts`. La API valida filtros, límites, identificadores y revisiones. Las tarjetas muestran datos de la base, no afirmaciones factuales redactadas libremente por el modelo. Una cita válida por sí sola no demuestra que una frase sea verdadera.
 
-Si Cognee devuelve un identificador antiguo, la API vuelve a leer su fila pública vigente. Supabase decide precio, disponibilidad y permisos. La memoria se actualiza o elimina después de cada modificación publicada y no devuelve fichas retiradas. Si falla Grok o Cognee, queda disponible la búsqueda por filtros, identificada como tal.
+Supabase también resuelve quién organizó cada evento y en qué espacio, mediante relaciones y procedencia. Este historial y sus citas no requieren Cognee. Si falla Grok, queda disponible la búsqueda por filtros, identificada como tal.
+
+## Cognee como ampliación opcional
+
+Cognee queda fuera de las dependencias del MVP. Las fichas actuales son breves y estructuradas; todavía no se ha demostrado un caso que necesite recuperación sobre textos desordenados.
+
+Una ampliación acotada sería "Qué conviene preguntar antes de reservar". Después de buscar venues, recuperaría fragmentos de descripciones y notas reales de organizadores para sugerir preguntas específicas. Cada fragmento conservaría texto original, autor o procedencia, fecha y permiso de publicación en Supabase. Una experiencia pasada no se convertiría automáticamente en una característica permanente, precio o disponibilidad.
+
+Solo se incorpora después de completar la demo principal, disponer de textos reales autorizados y comparar unas cinco consultas con Grok leyendo esos mismos textos directamente. Debe mostrar una mejora visible al recuperar evidencia pertinente. Con pocos documentos, la lectura directa puede bastar.
+
+Estimación de esfuerzo adicional, no medición: 30–60 minutos para verificar acceso y probar recuperación; 4–8 horas-persona en total para una integración acotada, suponiendo catálogo y API operativos y un servicio Cognee accesible. Incluye ingestión, recuperación, bloque web, validación de fuentes y pruebas de fallo. Un despliegue propio quedaría fuera del alcance de esta hackathon. El coste monetario depende del plan, los créditos y el procesamiento; no está verificado.
+
+Si se incorpora, Cognee devuelve contexto e identificadores de documentos. El servidor verifica revisión, visibilidad y respaldo del fragmento en Supabase antes de mostrarlo. La memoria se invalida al retirar o modificar una fuente. No decide permisos, precio ni disponibilidad. Si falla, se omite el bloque y funciona la búsqueda principal. No se envían contactos privados ni conversaciones sin autorización.
+
+Los plugins de memoria de desarrollo instalados no integran la web. No se ha comprobado conectividad ni credenciales de la API. El MVP no requiere configurarlas.
 
 ## Datos y confianza
 
@@ -49,7 +62,7 @@ Los archivos siguientes, salvo los del prototipo, todavía no existen:
 
 - `discover.html`, `discover.js`, `organiser.html`, `organiser.js`: interfaz nueva. El responsable de web es el único que modifica `app.js` y `styles.css`.
 - `api/`: entrada HTTP, consultas de catálogo, escritura autenticada y validación de contratos.
-- `agent/`: interpretación con Grok, selección de hechos y recuperación desde Cognee. No escribe fichas ni envía mensajes.
+- `agent/`: interpretación con Grok y selección de hechos. Recuperación desde Cognee solo si se acepta la ampliación opcional. No escribe fichas ni envía mensajes.
 - `supabase/migrations/`: cambios versionados, permisos y proyecciones públicas.
 - `scripts/`: importación con procedencia.
 
@@ -75,7 +88,7 @@ WhatsApp o Discord se añaden después mediante la misma API. Zero aparece en el
 
 - Proyecto Supabase compartido, acceso del equipo y hosting de API.
 - Modelo Grok disponible y límites de los créditos.
-- Cognee Cloud o servicio propio y permisos de la cuenta.
+- Si se aborda la ampliación de Cognee: acceso al servicio, textos autorizados y evaluación comparativa.
 - Usuarios de GitHub para asignar los tres frentes. El repo es público; falta añadir una licencia abierta válida para la entrega.
 
 No se comparten claves por chat, commits ni parámetros de URL. Se configuran en los secretos del despliegue.

@@ -28,15 +28,17 @@ Prompt para su agente:
 
 Se acepta cuando dos organizadores aprobados guardan venues con fuentes y un tercero los consulta. Las llamadas directas no permiten autoaprobarse, editar entidades ajenas ni obtener contactos privados. Repetir una importación o publicación no duplica registros.
 
-## Persona C: agente y memoria
+## Persona C: agente y evaluación
 
 Rama propuesta: `feature/discovery-agent`. Archivos propios: `agent/` y evaluación del agente.
 
 Prompt para su agente:
 
-> Lee AGENTS.md y docs/. Implementa un servicio invocable por api/ que interprete consultas con Grok y consulte el catálogo público. Devuelve el contrato de DiscoveryResult. Usa Cognee para recuperar relaciones documentadas y vuelve a validar IDs, revisiones y visibilidad en Supabase. No permitas que el modelo escriba fichas, conceda permisos, reserve o envíe mensajes. Las razones factuales salen de campos canónicos y plantillas. Prueba consultas sin resultados, fechas ambiguas, precio desconocido, disponibilidad ausente y caídas de proveedor. Sin proveedor, devuelve búsqueda por filtros identificada. No cambies la UI ni las políticas SQL.
+> Lee AGENTS.md y docs/. Implementa un servicio invocable por api/ que interprete consultas con Grok y consulte el catálogo público y sus relaciones en Supabase. Devuelve el contrato de DiscoveryResult y valida IDs, revisiones y visibilidad. El MVP no depende de Cognee. No permitas que el modelo escriba fichas, conceda permisos, reserve o envíe mensajes. Las razones factuales salen de campos canónicos y plantillas. Prueba consultas sin resultados, fechas ambiguas, precio desconocido, disponibilidad ausente y caídas de proveedor. Sin proveedor, devuelve búsqueda por filtros identificada. No cambies la UI ni las políticas SQL.
 
-Se acepta cuando consultas de venues y comunidades devuelven entidades reales y fuentes. Una instrucción maliciosa en una ficha no cambia permisos ni activa herramientas. El contexto enviado a Grok y Cognee excluye contactos privados. Las bajas y revisiones invalidan memoria antigua.
+Se acepta cuando consultas de venues y comunidades devuelven entidades reales y fuentes. Una instrucción maliciosa en una ficha no cambia permisos ni activa herramientas no autorizadas. El contexto enviado a Grok excluye contactos privados. Las bajas y revisiones se respetan en cada consulta.
+
+Después de la demo principal, esta persona puede evaluar la ampliación de Cognee descrita en architecture.md. Primero necesita textos reales autorizados y una comparación con Grok leyendo esos mismos textos. La integración solo se aborda si demuestra valor y cabe en el tiempo restante; no bloquea la entrega.
 
 ## Integración y revisión
 
