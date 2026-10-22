@@ -2,6 +2,35 @@
 
 Este plan prepara tareas para GitHub. Los responsables personales se asignan cuando el equipo facilite sus usuarios. Cada persona trabaja con su agente en una rama y checkout propios, desde el mismo commit base.
 
+## Límites entre chats
+
+La fuente de verdad para archivos y prefijos de rama es `coordination/roles.json`. `AGENTS.md` obliga a leerla; Cursor también recibe la regla `team-coordination.mdc`. El check `Contributor scope` detecta cambios fuera del rol en cada PR. Es una comprobación de colaboración, no aislamiento de permisos del sistema operativo ni identificación del autor.
+
+- Web posee la interfaz y sus pruebas. No cambia API, dependencias ni datos fuente.
+- Data posee Supabase, API, importaciones, `data.js`, dependencias, lockfiles y despliegue. Es el único que aplica migraciones a la base compartida.
+- Agent posee `agent/` y sus pruebas. Es el único que indexa el grafo de demo; solicita a data las dependencias y adaptadores que necesita.
+- Coordinación mantiene contratos, instrucciones, README y CI. Es una función de integración asumida por una de las tres personas, no una cuarta persona ni un cuarto chat de implementación simultáneo. Sus cambios van en una rama aparte.
+
+Cada chat empieza declarando: "Rol: …; rama: …; checkout: …; tarea: …". Una rama separada en la misma carpeta no basta. Los tres usan clones propios o worktrees distintos. No se crean otros chats de implementación para el mismo rol mientras siga activo el primero.
+
+Si usan T3, abran cada conversación de implementación con su workspace propio seleccionado en la app. Pedir al agente que cambie de carpeta no cambia la asociación del chat con el workspace. Esta PR no ha abierto ni asociado las tres conversaciones.
+
+Primero integren esta PR en `main`, o adopten todos explícitamente el mismo commit de arquitectura mientras está pendiente. Después cada persona crea su rama desde ese punto en su propio clon. Los prefijos permitidos son `feature/catalog-ui`, `feature/catalog-data` y `feature/discovery-agent`; pueden añadir un sufijo con `/` para tareas posteriores.
+
+Antes de abrir PR, ejecuten desde su checkout:
+
+```bash
+python3 scripts/check_scope.py --base origin/main
+```
+
+Si el check señala un archivo ajeno, el propietario hace ese cambio en su rama. No se amplía la lista para evitar un fallo puntual. Un cambio real de reparto se acuerda en una PR de coordinación.
+
+Data integra el endpoint `/api/ask`; agent entrega un servicio en `agent/` que recibe el mensaje y callbacks de lectura autorizada. Data implementa esos callbacks para Supabase. Agent implementa la conexión a Grok y Cognee, sin credenciales de administración de Supabase. Así los dos no editan el mismo handler. Antes de codificar fijan juntos las firmas y ejemplos ejecutables; coordinación actualiza `docs/contracts.md`.
+
+Usen puertos distintos si comparten máquina: web 4321, API 4322 y pruebas del agente 4323. Son reservas de desarrollo, no servidores ya configurados. Los tests usan datos y datasets propios. Los secretos y registros reales de demo no se modifican desde pruebas concurrentes.
+
+La asignación personal y `CODEOWNERS` quedan pendientes de los usuarios de GitHub. No se ha configurado protección de `main` ni se ha hecho obligatorio el check para fusionar. Hasta entonces, las PR se integran con revisión humana. Las reglas orientan a los agentes y el CI detecta incumplimientos, pero no impiden físicamente que alguien escriba en otra carpeta.
+
 ## Primera entrega compartida
 
 Lean [la arquitectura](architecture.md), [el contrato](contracts.md) y `AGENTS.md`. Conviertan los objetos del contrato en ejemplos verificables con datos reales y fuentes. Resuelvan cambios del contrato antes de que cada rama implemente una forma distinta.
