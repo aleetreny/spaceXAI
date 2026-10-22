@@ -54,6 +54,34 @@ SQLite rather than a spreadsheet because the deliverable *is* a join. A
 `.xlsx` can hold both tables but cannot express the relationship, and the
 relationship is the product.
 
+## Commercial Model
+
+A community renting a venue through the agent pays **two costs and nothing
+else**:
+
+| Cost | Basis |
+|---|---|
+| **Cleaning** | Restoring the space to its weekday condition |
+| **Staff** | Per 50 event members — supervision scaled to headcount |
+
+No rent, no venue hire fee, no hourly rate. This is what makes the match work
+on both sides: the venue is not selling time it was otherwise using, so its
+marginal cost is cleaning and supervision, and that is exactly what the
+community covers. The landlord's alternative is an empty building.
+
+Two consequences for the data model:
+
+1. **`typical_attendance` is a price input, not only a logistics one.**
+   Headcount in blocks of 50 determines staff cost. A 300-person event such as
+   HackKings is six staff units; a 40-person evening meetup is one. The field
+   therefore carries commercial weight and its current coverage — 1 of 10
+   communities — is a revenue blocker, not just a data gap.
+
+2. **Venue rows need cost fields.** `cleaning_cost` and `staff_cost_per_50` are
+   venue-specific and must be sourced per venue. They follow the same rule as
+   every other field: blank until verified, never estimated. A quoted price
+   built on an invented cleaning cost is worse than no quote.
+
 ## Documentation Requirements
 
 1. **Structure.** Glossary organised by table — the model, community fields,
