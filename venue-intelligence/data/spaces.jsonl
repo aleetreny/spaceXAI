@@ -1,0 +1,381 @@
+{"building_id": "b_cb62d28fda98e79c", "granularity": "legacy_unspecified", "name": "Ramen Space", "space_id": "s_6736d3af44249a44", "venue_id": "v_20788f6d9dad9722"}
+{"building_id": "b_0fb0cc14941ee5d3", "granularity": "legacy_unspecified", "name": "Civo Tech Junction", "space_id": "s_32a38f2cc9cd9681", "venue_id": "v_e725aa9959a04453"}
+{"building_id": "b_81519745b259be51", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - The Rooftop", "space_id": "s_d89a3d374925a975", "venue_id": "v_3f841a85ddbd46a2"}
+{"building_id": "b_379beeb76b64bb00", "granularity": "room", "name": "Lecture Theatre", "space_id": "s_1317d2ce26730b03", "venue_id": "v_64e73a096fd0bef6"}
+{"building_id": "b_379beeb76b64bb00", "granularity": "room", "name": "Showspace", "space_id": "s_574bd80f2deb5b19", "venue_id": "v_e220f3ab6f073805"}
+{"building_id": "b_379beeb76b64bb00", "granularity": "room", "name": "Training Suites (four classrooms)", "space_id": "s_8278a3c9d5034af3", "venue_id": "v_a77bd91eea8a18f4"}
+{"building_id": "b_e59c42631aeda524", "granularity": "room", "name": "Pigott Theatre", "space_id": "s_ba55422229f0924f", "venue_id": "v_22861bf8172beeaf"}
+{"building_id": "b_deae8d770360b988", "granularity": "legacy_unspecified", "name": "Cavendish Venues - 1 America Square", "space_id": "s_ce9a0e1c7236d058", "venue_id": "v_159bd800b3721247"}
+{"building_id": "b_d82234f32c5feabb", "granularity": "legacy_unspecified", "name": "Cavendish Venues - 22 Duchess Mews", "space_id": "s_f6465dc2a84f8bc6", "venue_id": "v_3a408efce6e04ce0"}
+{"building_id": "b_8c4b0c6cdcabc4b9", "granularity": "legacy_unspecified", "name": "Cavendish Venues - 44 Hallam Street", "space_id": "s_baa4d7c6c1484905", "venue_id": "v_76ca6cfda4118023"}
+{"building_id": "b_379beeb76b64bb00", "granularity": "room", "name": "Domed Boardroom", "space_id": "s_b2e3106274ec61f0", "venue_id": "v_3745293c8ea0c91d"}
+{"building_id": "b_037569bb171d3763", "granularity": "legacy_unspecified", "name": "Huckletree - The Terrace Westminster", "space_id": "s_06fe1a9e58752fe8", "venue_id": "v_b5ac3d4fed95ded3"}
+{"building_id": "b_bcf33d868df1fbb0", "granularity": "legacy_unspecified", "name": "Huckletree - Elwood Cafe Soho", "space_id": "s_4c7d99935e17ed6f", "venue_id": "v_3438326c95b1fd1d"}
+{"building_id": "b_0770ed97bcb0f5e9", "granularity": "legacy_unspecified", "name": "LSE - Teaching Rooms", "space_id": "s_71f439a9245ec74d", "venue_id": "v_7e93a2e65a9faeff"}
+{"building_id": "b_e59c42631aeda524", "granularity": "room", "name": "Knowledge Centre", "space_id": "s_0fc558516cd480af", "venue_id": "v_f20aa667a03207eb"}
+{"building_id": "b_26f3a614eebcea75", "granularity": "legacy_unspecified", "name": "Knowledge Schools Trust - Franklin House", "space_id": "s_b6082ec9be8301bb", "venue_id": "v_da8ef6cdb74fe1cf"}
+{"building_id": "b_b5deb07379848c11", "granularity": "legacy_unspecified", "name": "Knowledge Schools Trust - Palingswick House", "space_id": "s_5c22ce2dfc8890bb", "venue_id": "v_5cd43d82c52663c7"}
+{"building_id": "b_932e763ebaac15b8", "granularity": "legacy_unspecified", "name": "LSE - Lecture Theatres", "space_id": "s_916a856bf0ae99f3", "venue_id": "v_5d7b7f864498161d"}
+{"building_id": "b_ac430f96a711328c", "granularity": "room", "name": "Centre Stage", "space_id": "s_85f91152976e7ee1", "venue_id": "v_9c717a4ef814c842"}
+{"building_id": "b_9eddd41b3ec54858", "granularity": "legacy_unspecified", "name": "The London Academy School - Event Hire", "space_id": "s_c2df7809ed150b55", "venue_id": "v_24ff5465396ef76f"}
+{"building_id": "b_f5df22c685f1ba5b", "granularity": "legacy_unspecified", "name": "Ideal Centre", "space_id": "s_f62a23b760b001c4", "venue_id": "v_ff465f9de9c87cc1"}
+{"building_id": "b_475bbefc6c0bb9d9", "granularity": "legacy_unspecified", "name": "Westminster - Victoria Library Large Events Room", "space_id": "s_d67a002332bf3872", "venue_id": "v_42f9dfe20eec4263"}
+{"building_id": "b_1d2b087cf435e20d", "granularity": "legacy_unspecified", "name": "CodeNode - Whole Venue", "space_id": "s_db44fbd7211ef5fa", "venue_id": "v_9e4b82046331f086"}
+{"building_id": "b_ac430f96a711328c", "granularity": "room", "name": "Bleachers", "space_id": "s_831809647627fd22", "venue_id": "v_a559a469ecaadd65"}
+{"building_id": "b_ac430f96a711328c", "granularity": "room", "name": "Legacy Place", "space_id": "s_84720806c43067b1", "venue_id": "v_2acc75b8a620d122"}
+{"building_id": "b_ac430f96a711328c", "granularity": "room", "name": "Park", "space_id": "s_f2cb3075efdfb36e", "venue_id": "v_66eb0c66f6ff94f4"}
+{"building_id": "b_84c9e6843433dddf", "granularity": "legacy_unspecified", "name": "Impact Hub London Euston Event Space", "space_id": "s_54f3a6fba5f84a42", "venue_id": "v_a308125b3f450dbb"}
+{"building_id": "b_e59c42631aeda524", "granularity": "room", "name": "Harley Room", "space_id": "s_1225f3045b45bce6", "venue_id": "v_47c308e8347d0d27"}
+{"building_id": "b_961013e7a1be7b48", "granularity": "legacy_unspecified", "name": "Encode Hub - Whole Venue", "space_id": "s_292a54ca93f8d31d", "venue_id": "v_7b1f85086241872a"}
+{"building_id": "b_f4510bf3e5f4ca91", "granularity": "legacy_unspecified", "name": "The Gallery - Techspace Goswell Road", "space_id": "s_b35f84b956ca4eac", "venue_id": "v_4d84649eb28758fc"}
+{"building_id": "b_668cfb859b52e1c5", "granularity": "legacy_unspecified", "name": "The Loading Bay - Techspace Shoreditch", "space_id": "s_8b3b12943269fe47", "venue_id": "v_e8fe46da2052e0ba"}
+{"building_id": "b_f5630ad7f9042fbb", "granularity": "legacy_unspecified", "name": "Camden - Holborn Library Hire", "space_id": "s_3c3e86d6d2fbdfe7", "venue_id": "v_318f49896a60420b"}
+{"building_id": "b_e357f00eaefbf601", "granularity": "legacy_unspecified", "name": "Camden - Kentish Town Library Hire", "space_id": "s_d3a07eb59411eb3b", "venue_id": "v_1a62d3ac6c02fb0a"}
+{"building_id": "b_3e9bbc385a0f7403", "granularity": "legacy_unspecified", "name": "Camden - Kilburn Library Hire", "space_id": "s_ef0710105e9b4ee5", "venue_id": "v_51a787a5bba90489"}
+{"building_id": "b_2805197a9c05c605", "granularity": "legacy_unspecified", "name": "Camden - Queens Crescent Library Hire", "space_id": "s_7235e6859a8b24da", "venue_id": "v_be2f352398151225"}
+{"building_id": "b_ad1f05309bfd035f", "granularity": "legacy_unspecified", "name": "Camden - Swiss Cottage Library Hire", "space_id": "s_e96316bd97b12cc8", "venue_id": "v_fa95e1f12e87e71b"}
+{"building_id": "b_2906178183cb1b8e", "granularity": "legacy_unspecified", "name": "Merton - Mitcham Library", "space_id": "s_a9340338f1d160ba", "venue_id": "v_0287d08a903adf31"}
+{"building_id": "b_402a74bc3c110bb4", "granularity": "legacy_unspecified", "name": "Winchmore School - Lettings", "space_id": "s_1622ac901078bfdb", "venue_id": "v_3f566205d323112d"}
+{"building_id": "b_b7ae2234f0bdb287", "granularity": "legacy_unspecified", "name": "IDEALondon Event Space", "space_id": "s_78acec5fa0b480a6", "venue_id": "v_2dc4cc090ecfce32"}
+{"building_id": "b_816c6cd5f51470c6", "granularity": "legacy_unspecified", "name": "Imperial Venues - City and Guilds Lecture Theatres", "space_id": "s_2a2f225095bab0a8", "venue_id": "v_5f8bfdc2ac64cc47"}
+{"building_id": "b_203ebf6c5ec6418b", "granularity": "legacy_unspecified", "name": "Imperial Venues - Queen's Tower Rooms and Terrace", "space_id": "s_8fd5d5fcfc8c6876", "venue_id": "v_e03707524f22a60a"}
+{"building_id": "b_c083112c52325def", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - The Auditorium", "space_id": "s_0bc4f61909d54a1d", "venue_id": "v_470fe5383dbb00c4"}
+{"building_id": "b_b31db3bea486c3e8", "granularity": "legacy_unspecified", "name": "The Lightwell - Techspace Worship Street", "space_id": "s_b6cb3fee6e43d4ed", "venue_id": "v_97e77055fb9a913c"}
+{"building_id": "b_15c10cfa199320bc", "granularity": "room", "name": "Senate House Beveridge Hall", "space_id": "s_606abd20b8e414bf", "venue_id": "v_594b4c0d6e0913ab"}
+{"building_id": "b_15c10cfa199320bc", "granularity": "room", "name": "Senate House MacMillan Hall", "space_id": "s_76e9728b308ce024", "venue_id": "v_d1c9d9b99503d3b7"}
+{"building_id": "b_d016e34eb1f06202", "granularity": "legacy_unspecified", "name": "Whitechapel Gallery - Events", "space_id": "s_1bca8269434db85b", "venue_id": "v_c2d5f5589e5f5f8a"}
+{"building_id": "b_f3573024805e7d7a", "granularity": "legacy_unspecified", "name": "x+why - One Great Cumberland Place Event Space", "space_id": "s_270cc2f69057e746", "venue_id": "v_1437d46d917b9012"}
+{"building_id": "b_22c25dfcc0942813", "granularity": "legacy_unspecified", "name": "Huckletree - The Common Liverpool Street", "space_id": "s_c053ec46d8994d16", "venue_id": "v_1f126b474515b6f5"}
+{"building_id": "b_11363eea8a716727", "granularity": "legacy_unspecified", "name": "Soho Works - The Lofts at Shoreditch House", "space_id": "s_b8c6e299801f27ff", "venue_id": "v_6a48ef6436428286"}
+{"building_id": "b_17f0fecbb36afbd9", "granularity": "legacy_unspecified", "name": "x+why - Fivefields Victoria Event Space", "space_id": "s_76b9180eb1b6a84f", "venue_id": "v_0619b020a9afb221"}
+{"building_id": "b_25a4e37c1877f52c", "granularity": "legacy_unspecified", "name": "Blue Garage Innovation Hub", "space_id": "s_4ef21776b6fe3123", "venue_id": "v_d4bfe824468fbc0c"}
+{"building_id": "b_13160836ade8aad7", "granularity": "legacy_unspecified", "name": "Huckletree - The Landing Bishopsgate", "space_id": "s_d17838b43fcb173d", "venue_id": "v_d1a9a79a86c8062d"}
+{"building_id": "b_0a918f7967391a40", "granularity": "legacy_unspecified", "name": "Imperial Incubator - White City", "space_id": "s_2f9d7b0872a311f9", "venue_id": "v_b9fab432d141506c"}
+{"building_id": "b_0b9011346d48d5e6", "granularity": "legacy_unspecified", "name": "Level39 - The Sandbox", "space_id": "s_8910b6976674d484", "venue_id": "v_966e190be69a633e"}
+{"building_id": "b_35e6392b89c338e1", "granularity": "legacy_unspecified", "name": "Scale Space White City", "space_id": "s_ae05b026fd3a4b90", "venue_id": "v_7769ccf67a672493"}
+{"building_id": "b_cf7f85cf0f87248c", "granularity": "legacy_unspecified", "name": "Sustainable Ventures Event Space", "space_id": "s_6db83bfe90de3e36", "venue_id": "v_83b504bfe8e10a4d"}
+{"building_id": "b_354ed040fadde65c", "granularity": "legacy_unspecified", "name": "The Mills Fabrica - King's Cross Event Space", "space_id": "s_af64e4309d811217", "venue_id": "v_c8f2ef5e25ffa6b8"}
+{"building_id": "b_814bb6136f741171", "granularity": "legacy_unspecified", "name": "Huckletree - The Penthouse Lounge Kensington", "space_id": "s_525b240c8f1dfc85", "venue_id": "v_a1e27947d0bcc77f"}
+{"building_id": "b_c550bd44a4803c7b", "granularity": "legacy_unspecified", "name": "Huckletree - The Parlour Oxford Circus", "space_id": "s_d0afc61c1f0be166", "venue_id": "v_70152f5f2b040149"}
+{"building_id": "b_cc20803c93defc59", "granularity": "legacy_unspecified", "name": "Second Home Holland Park - The Courtyard", "space_id": "s_a24df482c33a1e6f", "venue_id": "v_814196b69b896ad4"}
+{"building_id": "b_8dd43ddd12134072", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - Hanbury Studio", "space_id": "s_df9c900a1448093c", "venue_id": "v_9aefb43459951932"}
+{"building_id": "b_c1f200c324dfdf59", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - The Cafe", "space_id": "s_f68bcc130d805cdb", "venue_id": "v_75aa9a0c871d7d33"}
+{"building_id": "b_9cd266ea5c48af05", "granularity": "legacy_unspecified", "name": "x+why - Chiswick Works Event Space", "space_id": "s_dcf80a0acf5da133", "venue_id": "v_1120d648fbfd4be8"}
+{"building_id": "b_357a4846c56d9e1e", "granularity": "legacy_unspecified", "name": "Huckletree - Town Hall Liverpool Street", "space_id": "s_12b18a5081a05ed6", "venue_id": "v_d93fe0d1e7de3601"}
+{"building_id": "b_245e788a12f60dc5", "granularity": "legacy_unspecified", "name": "LSE - Harvard Theatres", "space_id": "s_d76d47cab630f378", "venue_id": "v_769a49ce3e1d6ccd"}
+{"building_id": "b_dbcf10ea9a4c6025", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - The Study", "space_id": "s_e67454bcf9491857", "venue_id": "v_b0ad8d44d29f746c"}
+{"building_id": "b_2c2999c5cda3a37a", "granularity": "legacy_unspecified", "name": "Second Home Spitalfields - Workshop Space", "space_id": "s_e97f0d67929e1979", "venue_id": "v_20869e81cc7e5ac1"}
+{"building_id": "b_f65090040051b1fd", "granularity": "legacy_unspecified", "name": "10 York Road - WeWork Auditorium", "space_id": "s_8f68518667a57826", "venue_id": "v_76e492ac53caa7a4"}
+{"building_id": "b_37efbed20d75b5f2", "granularity": "legacy_unspecified", "name": "Anomalous Space", "space_id": "s_29e19b956d9c6526", "venue_id": "v_828911570df08b1c"}
+{"building_id": "b_145e524134a32654", "granularity": "legacy_unspecified", "name": "Impact Hub London Euston - Small Meeting Rooms", "space_id": "s_13ae275746c6dfd6", "venue_id": "v_b8179544a86b2a73"}
+{"building_id": "b_891a1daef64a5167", "granularity": "legacy_unspecified", "name": "Landing Canary Wharf - Event Venue", "space_id": "s_2071afbf72a538e4", "venue_id": "v_9a39fb1103428381"}
+{"building_id": "b_636b7d4b37213e5c", "granularity": "legacy_unspecified", "name": "Oneder - Meeting & Events", "space_id": "s_479cf95780f87487", "venue_id": "v_0d7b42209d034fa3"}
+{"building_id": "b_cc8de1e7ff8ff632", "granularity": "legacy_unspecified", "name": "Paddington Works", "space_id": "s_3b9aac999f8cbfdb", "venue_id": "v_bdefad51392cb43d"}
+{"building_id": "b_cb94dc31e52e42bf", "granularity": "legacy_unspecified", "name": "Rainmaking Loft", "space_id": "s_80329986003c2a92", "venue_id": "v_21520dea5966c5fd"}
+{"building_id": "b_c40cc623c0efeb91", "granularity": "legacy_unspecified", "name": "SPACE4 Event Hire", "space_id": "s_4ef6f98bf261000e", "venue_id": "v_54bc586122003b04"}
+{"building_id": "b_018fb4668a47caae", "granularity": "legacy_unspecified", "name": "Second Home Holland Park - Libreria Bookshop", "space_id": "s_c21f7abcb110004f", "venue_id": "v_0858ae5c63c4fcbf"}
+{"building_id": "b_49c1290b722a5ea7", "granularity": "legacy_unspecified", "name": "Soho Works - White City", "space_id": "s_0ae85653d0d91fa8", "venue_id": "v_ac7b80ab5f33a16b"}
+{"building_id": "b_22ffb382ba124d9f", "granularity": "legacy_unspecified", "name": "Storey Club", "space_id": "s_d0fa4c764d6dc8c5", "venue_id": "v_09717b11493dfeb2"}
+{"building_id": "b_857edf3339d7df0e", "granularity": "legacy_unspecified", "name": "Studio Y - Spacemade", "space_id": "s_a0951db7855d57c1", "venue_id": "v_146a023deaf20c5c"}
+{"building_id": "b_bc708b08e9c544e9", "granularity": "legacy_unspecified", "name": "The Trampery - General Venues", "space_id": "s_2e22790d61fcc663", "venue_id": "v_e0aaf3eb81afb428"}
+{"building_id": "b_1d52a677c28453ff", "granularity": "legacy_unspecified", "name": "The Trampery Old Street", "space_id": "s_beaebcbf81b21f75", "venue_id": "v_112fe13d6742dc25"}
+{"building_id": "b_87b83f1f595de712", "granularity": "legacy_unspecified", "name": "Westminster - Reference Library (Isaac Newton Room)", "space_id": "s_17c205ead5e40c31", "venue_id": "v_e51527b2bf7cca04"}
+{"building_id": "b_3716c96b49bcd80d", "granularity": "legacy_unspecified", "name": "Workspace - Salisbury House Eventspace", "space_id": "s_fdb4f22c81d829c6", "venue_id": "v_14ad68d227c3d2d3"}
+{"building_id": "b_a12bc5844561a74d", "granularity": "legacy_unspecified", "name": "x+why - 22 Bishopsgate Event Space", "space_id": "s_8ca4729d4765cfb2", "venue_id": "v_aeea8253b3726130"}
+{"building_id": "b_0ef6164645963f19", "granularity": "legacy_unspecified", "name": "x+why - Arding & Hobbs Event Space", "space_id": "s_520d19463a70fe3c", "venue_id": "v_49a2244d33845e82"}
+{"building_id": "b_c4d2f046900a426e", "granularity": "legacy_unspecified", "name": "x+why - The Fulwood", "space_id": "s_84788dc0464403c3", "venue_id": "v_8b442cf15b2650c2"}
+{"building_id": "b_4a8cba73bdb00ba9", "granularity": "legacy_unspecified", "name": "x+why - The People's Mission Hall", "space_id": "s_be42d8bcdb071281", "venue_id": "v_94df1dc7eab152d7"}
+{"building_id": "b_182060ac208f82c5", "granularity": "legacy_unspecified", "name": "London Executive Offices", "space_id": "s_d7d9514967d2b08d", "venue_id": "v_62dd159720188c11"}
+{"building_id": "b_7f3d79150cbf4ddc", "granularity": "legacy_unspecified", "name": "The Performance Space at Willesden Green Library", "space_id": "s_dae03805b6edb2e5", "venue_id": "v_287d872794906f0f"}
+{"building_id": "b_7124d328c531dd61", "granularity": "legacy_unspecified", "name": "Goldsmiths - Campus Event Spaces", "space_id": "s_57c85a028485ac0c", "venue_id": "v_328beb2f97a2cdd7"}
+{"building_id": "b_ce7100dfe5e035e4", "granularity": "legacy_unspecified", "name": "Imperial College - White City Event Venues", "space_id": "s_96a6934f3d0d2f8a", "venue_id": "v_783c392177b61c4a"}
+{"building_id": "b_7fd7f4b83be4f891", "granularity": "legacy_unspecified", "name": "King's College London - London Bridge Venues", "space_id": "s_181c11362d6da260", "venue_id": "v_3a98f28f712ae534"}
+{"building_id": "b_41302ab741215f72", "granularity": "legacy_unspecified", "name": "London Film School - Venue Hire", "space_id": "s_d7f6072497c38511", "venue_id": "v_a06e9d70cf287dbc"}
+{"building_id": "b_69e99f3b4869d8b6", "granularity": "legacy_unspecified", "name": "Queen Mary University London - Events & Hospitality", "space_id": "s_1e419bdf6df3941b", "venue_id": "v_311cc5f54b2a02ac"}
+{"building_id": "b_23d3f9fe34776679", "granularity": "legacy_unspecified", "name": "Regent's University London - Regent's Events", "space_id": "s_8589686f7fe835b8", "venue_id": "v_63c1f243ee2cc355"}
+{"building_id": "b_201c8417bb00b197", "granularity": "legacy_unspecified", "name": "SOAS - Campus Venue Hire", "space_id": "s_06f00048d55e8bfb", "venue_id": "v_166d85d2e95d9a19"}
+{"building_id": "b_02e8d320086f384f", "granularity": "legacy_unspecified", "name": "UCL - 20 Bedford Way / Logan Hall", "space_id": "s_9ec93345df7e039d", "venue_id": "v_f8f68df198dbf2d7"}
+{"building_id": "b_b82e1a64ae8f403a", "granularity": "legacy_unspecified", "name": "UCL - Torrington Place Training Centre", "space_id": "s_a31e8dee5f52b1c7", "venue_id": "v_daca8ebfdf2d87fe"}
+{"building_id": "b_9da36a7689196bbe", "granularity": "legacy_unspecified", "name": "UCL - Tottenham Court Road Training Centre", "space_id": "s_a9085a260e785531", "venue_id": "v_312f176c51bf7432"}
+{"building_id": "b_8ec51716e00c3992", "granularity": "legacy_unspecified", "name": "UCL East - Marshgate", "space_id": "s_8929b6cd8d311de1", "venue_id": "v_e3ef00607ccaa1db"}
+{"building_id": "b_0c5cae35a1e6154a", "granularity": "legacy_unspecified", "name": "University of East London - Venue Hire", "space_id": "s_62caa26e2c4aecf1", "venue_id": "v_1cc92d2df89980f2"}
+{"building_id": "b_a60445a0acaacc74", "granularity": "legacy_unspecified", "name": "University of Greenwich - Avery Hill Conference Venues", "space_id": "s_d010c1d54806f872", "venue_id": "v_608c930ab61c7184"}
+{"building_id": "b_10cb85704f04fdce", "granularity": "legacy_unspecified", "name": "Coin Street Conference Centre", "space_id": "s_a72c0b934ada5468", "venue_id": "v_fc64e2a4cbc57edb"}
+{"building_id": "b_3a238eea2c9e3b08", "granularity": "legacy_unspecified", "name": "IET London Savoy Place - Meeting Rooms", "space_id": "s_018812f987c8f8ea", "venue_id": "v_c84e4cd4b4e91ef4"}
+{"building_id": "b_e52b6f00a6cd8185", "granularity": "legacy_unspecified", "name": "Kings House Venue Hire", "space_id": "s_0255e92a548d5f8b", "venue_id": "v_f2ce7271f1b8ed87"}
+{"building_id": "b_adfe99d92dbcca74", "granularity": "legacy_unspecified", "name": "Kings Place Events", "space_id": "s_5d0a327ec7284889", "venue_id": "v_318b7ec5703d3ead"}
+{"building_id": "b_ba188a7f1922ed0a", "granularity": "legacy_unspecified", "name": "Landing Canary Wharf", "space_id": "s_19755e3dce0b3058", "venue_id": "v_acf8f579ecafbe93"}
+{"building_id": "b_0751cad8c87beb45", "granularity": "legacy_unspecified", "name": "Queen Mary University of London - Event Venues", "space_id": "s_ed3b481c82ed9af1", "venue_id": "v_0e6e266cd7e2af3d"}
+{"building_id": "b_9d2009f8b7a4f2a1", "granularity": "legacy_unspecified", "name": "RCP London Events", "space_id": "s_0178abf0e1b6935c", "venue_id": "v_e8a8eebd63d8d9dd"}
+{"building_id": "b_9bfe1d4b0ac77565", "granularity": "legacy_unspecified", "name": "Royal Society - Venue Hire", "space_id": "s_8509fa8eed4870ed", "venue_id": "v_75663b06c7588bd2"}
+{"building_id": "b_9a3568dadb267850", "granularity": "legacy_unspecified", "name": "The Lantern by Tonik", "space_id": "s_903c8d76bcc39971", "venue_id": "v_f39b09911601cce4"}
+{"building_id": "b_115a9819eca6b78b", "granularity": "legacy_unspecified", "name": "ExCeL London", "space_id": "s_6795dd2d0d7f0034", "venue_id": "v_f0539481646d48d6"}
+{"building_id": "b_8e4cf05427cf44ca", "granularity": "legacy_unspecified", "name": "West Library Hall - Islington", "space_id": "s_961cd22c523ceb29", "venue_id": "v_6fb3b2a49aceded8"}
+{"building_id": "b_bbb3f6f7f9c462f2", "granularity": "legacy_unspecified", "name": "Sedgehill Academy - Auditorium", "space_id": "s_e81f6a1bb4032daf", "venue_id": "v_ece34ddf52ea135a"}
+{"building_id": "b_55bfc8f0e539a883", "granularity": "legacy_unspecified", "name": "Craven Park Community Centre - Imperial Wharf", "space_id": "s_2d9491684ed36ebc", "venue_id": "v_faa6abd9873d098a"}
+{"building_id": "b_3c038ed27d26b00d", "granularity": "legacy_unspecified", "name": "Southwark - Peckham Library Pod 1", "space_id": "s_cd67bcca8c81bea2", "venue_id": "v_ad5b61df8188f7b5"}
+{"building_id": "b_daf8c75714b8d4a5", "granularity": "legacy_unspecified", "name": "30 Euston Square - Camden Suite", "space_id": "s_4dc8d9e49ccc5d7d", "venue_id": "v_ff641b4929cb5b29"}
+{"building_id": "b_2d863f4a3ed0783f", "granularity": "legacy_unspecified", "name": "Carolyn Downs' Community Room", "space_id": "s_781526ff9c9fce5b", "venue_id": "v_d0f85488b30e5de2"}
+{"building_id": "b_379a726e50411bd6", "granularity": "legacy_unspecified", "name": "Commerce Road Community Centre", "space_id": "s_78294672b26cde96", "venue_id": "v_a0c7283ed61f571c"}
+{"building_id": "b_aadcefcb791bd5e4", "granularity": "legacy_unspecified", "name": "Milton Road Community Centre", "space_id": "s_188631a2a199c67b", "venue_id": "v_e02d7e61716aeb7f"}
+{"building_id": "b_a5bf9edf94c1e3f9", "granularity": "legacy_unspecified", "name": "Southwark - Una Marson Community Space", "space_id": "s_f05fb8b5fdf9ba4d", "venue_id": "v_017e70e77ff17802"}
+{"building_id": "b_8e194fc598260898", "granularity": "legacy_unspecified", "name": "Studio 42 at Kilburn Library", "space_id": "s_0af6bd91450850ba", "venue_id": "v_b4fdc9feb4554d2a"}
+{"building_id": "b_59e952ee9ac553e1", "granularity": "legacy_unspecified", "name": "The Education Room at Willesden Green Library", "space_id": "s_13b95ae91f888ddd", "venue_id": "v_18c17c0cd05acde3"}
+{"building_id": "b_757d07f475a248d7", "granularity": "legacy_unspecified", "name": "Westminster - Victoria Library Small Room", "space_id": "s_b95fa2e458bb29e9", "venue_id": "v_f589fc10f1237afb"}
+{"building_id": "b_7bff18cc8c63d307", "granularity": "legacy_unspecified", "name": "Alperton Community School - Venue Hire", "space_id": "s_4015f1e87d732cdc", "venue_id": "v_2cda46960ff7a858"}
+{"building_id": "b_cf1f39dd1ebea43b", "granularity": "legacy_unspecified", "name": "City of London School - Venue Hire", "space_id": "s_0958ecfebf37d35b", "venue_id": "v_4e59f6ea495c2fbd"}
+{"building_id": "b_949c2f1f72afd156", "granularity": "legacy_unspecified", "name": "Global Academy - Venue Hire", "space_id": "s_4006ca5b6bd70936", "venue_id": "v_02f2a9279cbe4af8"}
+{"building_id": "b_b35ac4e4ca70d552", "granularity": "legacy_unspecified", "name": "Highgate School - Venue Hire", "space_id": "s_d267b2f09e81ff55", "venue_id": "v_ba04d540c35ff822"}
+{"building_id": "b_f91b214169769be2", "granularity": "legacy_unspecified", "name": "Hoxton Docks", "space_id": "s_e01a04c656bcada3", "venue_id": "v_9be68b41da498057"}
+{"building_id": "b_e6fa3e99cac6dc85", "granularity": "legacy_unspecified", "name": "Lambeth - Clapham Library Whole Library", "space_id": "s_0d7a420c9ee1663b", "venue_id": "v_6fc2040b3d9ef3c2"}
+{"building_id": "b_f44d0b4d536e8478", "granularity": "legacy_unspecified", "name": "Lambeth - Durning Library Whole Library", "space_id": "s_3c204de1beb3743c", "venue_id": "v_c13bbd97af30cdf5"}
+{"building_id": "b_a7e434396106ea08", "granularity": "legacy_unspecified", "name": "Merton - Wimbledon Library Rooms", "space_id": "s_6e01eae3f1f8a97c", "venue_id": "v_a4a5a2049dc461d8"}
+{"building_id": "b_82f2b03bc4f2acd2", "granularity": "legacy_unspecified", "name": "Paddington Academy - Venue Hire", "space_id": "s_0e5b4eb0b9382039", "venue_id": "v_294c5a38354deb4d"}
+{"building_id": "b_aa0e253d9cc383b2", "granularity": "legacy_unspecified", "name": "Regent High School - Lettings", "space_id": "s_0142e763f562eed2", "venue_id": "v_dad8fae03fac0d53"}
+{"building_id": "b_bc679e78ab8e7406", "granularity": "legacy_unspecified", "name": "St Paul's School - Facilities Hire", "space_id": "s_f3eb48add88a5f18", "venue_id": "v_38bf2a4b7a36b459"}
+{"building_id": "b_f1995b3e4852969b", "granularity": "legacy_unspecified", "name": "Stratford School Academy - Facilities Hire", "space_id": "s_b3895b1959a2ec4c", "venue_id": "v_5afd0d18a4440634"}
+{"building_id": "b_33d438048c2ff9f7", "granularity": "legacy_unspecified", "name": "Sundial Centre", "space_id": "s_98f77a341595312b", "venue_id": "v_fbbeb2ebbd805a6d"}
+{"building_id": "b_cbaa9f6670a1c850", "granularity": "legacy_unspecified", "name": "The Hoxton Shoreditch Apartment", "space_id": "s_33fda9646cc6a4bb", "venue_id": "v_bc15c223a7b61b86"}
+{"building_id": "b_784b9cfdc64586ca", "granularity": "legacy_unspecified", "name": "The Lioness Room at Wembley Library", "space_id": "s_a1257bd34581d0d4", "venue_id": "v_56c3e437517f2b02"}
+{"building_id": "b_55475e4434656742", "granularity": "legacy_unspecified", "name": "Westminster - Charing Cross Library Room Hire", "space_id": "s_5e7d7431306e717b", "venue_id": "v_1db2d0dfa74a7fff"}
+{"building_id": "b_a93cad126fc28cf1", "granularity": "legacy_unspecified", "name": "Westminster - Church Street Library Room Hire", "space_id": "s_c1b13e933e2f1b0c", "venue_id": "v_e709ed453e752180"}
+{"building_id": "b_99353ce3e6e29e0e", "granularity": "legacy_unspecified", "name": "Westminster - Maida Vale Library Room Hire", "space_id": "s_ac1ea44687952bf3", "venue_id": "v_825dc335a67861a8"}
+{"building_id": "b_859840fc22ddfcd9", "granularity": "legacy_unspecified", "name": "Westminster - Mayfair Library Room Hire", "space_id": "s_09dafa41731b8a82", "venue_id": "v_394a676d0492761e"}
+{"building_id": "b_b9804e0f2a6aba54", "granularity": "legacy_unspecified", "name": "Westminster - Westminster Business Library Hire", "space_id": "s_fd167443fb952336", "venue_id": "v_9970eac43338bd44"}
+{"building_id": "b_68f03d63df3dd15b", "granularity": "legacy_unspecified", "name": "Bethnal Green Library", "space_id": "s_4cc76d37babe4097", "venue_id": "v_684d87870a1bd2eb"}
+{"building_id": "b_847f7cbe85ed6fcd", "granularity": "legacy_unspecified", "name": "Bonner Primary School (Bethnal Green)", "space_id": "s_773904acde47fa24", "venue_id": "v_1b2946a397d5a272"}
+{"building_id": "b_645a99cc1e6f3379", "granularity": "legacy_unspecified", "name": "Bonner Primary School (Mile End)", "space_id": "s_3eea7359bd22870d", "venue_id": "v_d475e33f9a7f553e"}
+{"building_id": "b_5d2b5d1d1e4723ba", "granularity": "legacy_unspecified", "name": "Bow School", "space_id": "s_9b12146f5a869d28", "venue_id": "v_a6c7a043240e02e4"}
+{"building_id": "b_6bd12ed6e12b6389", "granularity": "legacy_unspecified", "name": "Brixton Library", "space_id": "s_623a149b14dc20f1", "venue_id": "v_acbb80c84d9ebfb4"}
+{"building_id": "b_6928a086579a9d8c", "granularity": "legacy_unspecified", "name": "Clapham Library", "space_id": "s_d034e5bd045fd645", "venue_id": "v_91ad16d3789a8a89"}
+{"building_id": "b_8660b32a66b847fe", "granularity": "legacy_unspecified", "name": "Durning Library", "space_id": "s_a6babd4a5ffa663b", "venue_id": "v_d1a4e7f5ccbe6cf6"}
+{"building_id": "b_7300e6ac664c32e1", "granularity": "legacy_unspecified", "name": "Harry Gosling Primary School", "space_id": "s_4f32fb3114107d68", "venue_id": "v_2a5b18896569c870"}
+{"building_id": "b_6f56ebfb3db949e8", "granularity": "legacy_unspecified", "name": "Hermitage School", "space_id": "s_6750af92b51e2f04", "venue_id": "v_996ddff48ceb4089"}
+{"building_id": "b_dc068ad5c825fec3", "granularity": "legacy_unspecified", "name": "Idea Store Bow", "space_id": "s_6526f09a9c21c9a8", "venue_id": "v_95e883794f41b205"}
+{"building_id": "b_36fce9b6f664fe85", "granularity": "legacy_unspecified", "name": "Idea Store Canary Wharf", "space_id": "s_a4f29e76e8f8ac50", "venue_id": "v_2fbd8a0fb35811cb"}
+{"building_id": "b_8bf3a3720b8a259d", "granularity": "legacy_unspecified", "name": "Idea Store Chrisp Street", "space_id": "s_8393eb882684e44a", "venue_id": "v_4db2850eb7ae9fb8"}
+{"building_id": "b_32571bd3d2102b2a", "granularity": "legacy_unspecified", "name": "Idea Store Whitechapel", "space_id": "s_d70fca94250d6627", "venue_id": "v_bcae599e9af2f3ea"}
+{"building_id": "b_5317dafe2e3e0003", "granularity": "legacy_unspecified", "name": "Local History Library & Archives", "space_id": "s_d713d3ed6ac44dc5", "venue_id": "v_6ac35601fab6bc56"}
+{"building_id": "b_280c4f0c1a26a92c", "granularity": "legacy_unspecified", "name": "Poplar After School Club (Poplar Play Centre)", "space_id": "s_397ba5df0a2fe5e4", "venue_id": "v_eb112fd028d07975"}
+{"building_id": "b_53eb0356f4502e3d", "granularity": "legacy_unspecified", "name": "The Gallery at Willesden Green Library", "space_id": "s_b26d6bc11a4810c9", "venue_id": "v_6d6b6e0c9a7ffbcf"}
+{"building_id": "b_5ded1c0a95757fcc", "granularity": "legacy_unspecified", "name": "The Reading Room at Willesden Green Library", "space_id": "s_16c00068e398f642", "venue_id": "v_cae6a127b5176d11"}
+{"building_id": "b_c17bf0cfdbf05969", "granularity": "legacy_unspecified", "name": "Arbeit Studios - Event Spaces", "space_id": "s_5b30b370e50b194a", "venue_id": "v_17d4ad110f253369"}
+{"building_id": "b_2c36da04ff0c9fa4", "granularity": "legacy_unspecified", "name": "Circular Road Community Hub", "space_id": "s_0fd1e3e5f289d4cd", "venue_id": "v_59fb4c244b0c93b2"}
+{"building_id": "b_3028d9ada2d0248e", "granularity": "legacy_unspecified", "name": "Deptford Lounge - Spaces", "space_id": "s_12227ef35b930bff", "venue_id": "v_8efec15a8d39c580"}
+{"building_id": "b_5e9d3d43434177d5", "granularity": "legacy_unspecified", "name": "Grow Hackney - Events", "space_id": "s_7ced8efe6d63204a", "venue_id": "v_55b55bc660b4350f"}
+{"building_id": "b_975aac7a3fb0585a", "granularity": "legacy_unspecified", "name": "Hackney Depot", "space_id": "s_99ec80b479389252", "venue_id": "v_797f80a57735c5c0"}
+{"building_id": "b_07d9101a32b091a0", "granularity": "legacy_unspecified", "name": "Hilldrop Community Centre", "space_id": "s_68698b8c440a7d5b", "venue_id": "v_c42790e13d1452a8"}
+{"building_id": "b_2fe9766ceaeb71f0", "granularity": "legacy_unspecified", "name": "Kiln Theatre - Event Spaces", "space_id": "s_69a777e22f8f82c8", "venue_id": "v_f2f934e595955c1d"}
+{"building_id": "b_de31abdeb3c3daa8", "granularity": "legacy_unspecified", "name": "London Chinese Community Centre - Rooms", "space_id": "s_f008a5bcfef6f299", "venue_id": "v_a13211ffc29859fd"}
+{"building_id": "b_84bfb23da29b59d2", "granularity": "legacy_unspecified", "name": "Merton - Arts Space Mitcham", "space_id": "s_bda5c3d8b38dd0ba", "venue_id": "v_30013ab3525d1294"}
+{"building_id": "b_088677748f8e09d6", "granularity": "legacy_unspecified", "name": "Number 90 Corporate", "space_id": "s_5a1b3a460129ad75", "venue_id": "v_6bd088d565cd8f7e"}
+{"building_id": "b_e5f443acdbfcb048", "granularity": "legacy_unspecified", "name": "Open House Hackney", "space_id": "s_4fa92043ffb82d3a", "venue_id": "v_1c6bf47c979258e4"}
+{"building_id": "b_ed5514da27be146a", "granularity": "legacy_unspecified", "name": "Rich Mix - Private Hire", "space_id": "s_4034371a3eca4c01", "venue_id": "v_15cc16274aa397c2"}
+{"building_id": "b_9110f4fbde6ef864", "granularity": "legacy_unspecified", "name": "St Mary's Islington - Venue Hire", "space_id": "s_4cf9bfe7d748c98b", "venue_id": "v_160b13bf4c0dce47"}
+{"building_id": "b_5cf706c010576366", "granularity": "legacy_unspecified", "name": "The AHOY Centre - Main Function Room", "space_id": "s_0c7bae838439a290", "venue_id": "v_4a59c01f2850d35a"}
+{"building_id": "b_015b9e0d794a0857", "granularity": "legacy_unspecified", "name": "The Art House", "space_id": "s_d8c350b29465b75f", "venue_id": "v_e4c7b9d7f3e48ef5"}
+{"building_id": "b_4e5ad29e255b8c01", "granularity": "legacy_unspecified", "name": "The Bridge - Waterloo Room", "space_id": "s_fa9a08b6e6c3992e", "venue_id": "v_eabe8d260138276a"}
+{"building_id": "b_fd92955376682dc2", "granularity": "legacy_unspecified", "name": "The Lantern by Tonik - London Bridge", "space_id": "s_43bb0bd4ad4f7370", "venue_id": "v_2ea2c0f6758c1d8b"}
+{"building_id": "b_94af691e257bb90a", "granularity": "legacy_unspecified", "name": "The Old Laundry - Stockwell", "space_id": "s_161016f402e7436a", "venue_id": "v_59852503e4dd75d8"}
+{"building_id": "b_20acdfeac497270d", "granularity": "legacy_unspecified", "name": "The Yard Theatre - Event Hire", "space_id": "s_52c8da298793ae14", "venue_id": "v_a6c19dd9b3f9bb4e"}
+{"building_id": "b_8c70bf668f401e02", "granularity": "legacy_unspecified", "name": "Vittoria Wharf Studio", "space_id": "s_3ab361403a43c426", "venue_id": "v_eaf094618af13c96"}
+{"building_id": "b_a2a0a50595d31cc3", "granularity": "legacy_unspecified", "name": "Wick Studio", "space_id": "s_d970ab4f4c1e1cba", "venue_id": "v_94a5da4f19d1cdae"}
+{"building_id": "b_8aef400594530fc7", "granularity": "legacy_unspecified", "name": "291 Gallery & Restaurant", "space_id": "s_6890878ad850416e", "venue_id": "v_b1d7194e8aa665c4"}
+{"building_id": "b_fde591cc41b5730b", "granularity": "legacy_unspecified", "name": "4th Floor Studios", "space_id": "s_52db49996b047cc2", "venue_id": "v_4a6e4d64342d5c29"}
+{"building_id": "b_f1691d080eeae851", "granularity": "legacy_unspecified", "name": "All Saints", "space_id": "s_fc1f5552ad72642a", "venue_id": "v_b57a42430a6254e5"}
+{"building_id": "b_f6a948ae381c2468", "granularity": "legacy_unspecified", "name": "Alpha Grove Community Centre", "space_id": "s_4e620d4ba084f7b4", "venue_id": "v_3f1f872d522948ca"}
+{"building_id": "b_4c10c22e9e3e746e", "granularity": "legacy_unspecified", "name": "Amwell Court Community Hall", "space_id": "s_2ab9c228cf8d4ff2", "venue_id": "v_e7a0fce0c3a53152"}
+{"building_id": "b_f5a76bcdba8693f0", "granularity": "legacy_unspecified", "name": "Archbishops Park Sports Facilities", "space_id": "s_4bec356f63d8775b", "venue_id": "v_6df0f4975d464e1c"}
+{"building_id": "b_b7f1f05e211ef243", "granularity": "legacy_unspecified", "name": "Artsadmin (formerly Curtain Theatre)", "space_id": "s_edbac91a57fcc4fa", "venue_id": "v_73cb801797f79f91"}
+{"building_id": "b_bc57341a51b8fd9c", "granularity": "legacy_unspecified", "name": "Attlee Centre", "space_id": "s_6fc6d946e0d131fc", "venue_id": "v_f09f0b2312ae2d63"}
+{"building_id": "b_cd41a08abb6a0a10", "granularity": "legacy_unspecified", "name": "Azalea Court Community Hall", "space_id": "s_2c2e8362f7be2cda", "venue_id": "v_03922e8b644cfb5c"}
+{"building_id": "b_37d90b7d59c40957", "granularity": "legacy_unspecified", "name": "Banister House Community Hall", "space_id": "s_8d5efd330e363f6e", "venue_id": "v_95698cca0ae173ea"}
+{"building_id": "b_c90ff88cb746297b", "granularity": "legacy_unspecified", "name": "Bede Community Centre", "space_id": "s_385ffd918ea5889b", "venue_id": "v_e76601c9e1ad04f3"}
+{"building_id": "b_d636395c4b47fa7b", "granularity": "legacy_unspecified", "name": "Bernie Cameron Community Centre", "space_id": "s_2537f9b00d9fdf76", "venue_id": "v_45f3248eb6f5e6ed"}
+{"building_id": "b_705e5e1bc3ffdef8", "granularity": "legacy_unspecified", "name": "Bethnal Green Community Centre", "space_id": "s_2a24d4cfdb6a3b5c", "venue_id": "v_68d40a90aed60236"}
+{"building_id": "b_d4f18be8db565db7", "granularity": "legacy_unspecified", "name": "Bethnal Green Meeting House United Reformed Church", "space_id": "s_714822ffbe6fc8b9", "venue_id": "v_4f60e20d30a27a0c"}
+{"building_id": "b_1fc7bafcc844c16f", "granularity": "legacy_unspecified", "name": "Boro Bethnal Green Working Men's Club", "space_id": "s_91fb8c6e3fe6ea56", "venue_id": "v_3e607b169cd09533"}
+{"building_id": "b_75f1793c78f94227", "granularity": "legacy_unspecified", "name": "Bow Arts - Nunnery Gallery", "space_id": "s_c98dd1a7978b564b", "venue_id": "v_d36558d5d1b218c7"}
+{"building_id": "b_1b3205157b340b13", "granularity": "legacy_unspecified", "name": "Bow Road Methodist Church", "space_id": "s_29746f88e1795b10", "venue_id": "v_300873ee5d4bd29a"}
+{"building_id": "b_0b56bd3b7b007a39", "granularity": "legacy_unspecified", "name": "Brady Arts and Community Centre", "space_id": "s_c76aca408672459f", "venue_id": "v_40fbc816d9a8c79b"}
+{"building_id": "b_5da3fcb0064a79c9", "granularity": "legacy_unspecified", "name": "Brixton Recreation Centre", "space_id": "s_264e6e1038a63af2", "venue_id": "v_93b122369d9377ab"}
+{"building_id": "b_1d786f49e523602a", "granularity": "legacy_unspecified", "name": "Brockwell Hall", "space_id": "s_9add16e4a7e56d34", "venue_id": "v_521671192d57c816"}
+{"building_id": "b_43e89d5a04866e58", "granularity": "legacy_unspecified", "name": "Butley Court Community Centre and Clubroom", "space_id": "s_2c44cb7f2655a4ca", "venue_id": "v_41f851adf1495af6"}
+{"building_id": "b_e4e405aca3a74977", "granularity": "legacy_unspecified", "name": "Chicksand Friendly Club", "space_id": "s_531dc85b65389e9a", "venue_id": "v_58e4ff76fd2b04a0"}
+{"building_id": "b_a6fd73fbce8f82c8", "granularity": "legacy_unspecified", "name": "Chisenhale Dance Space", "space_id": "s_29fbfe4b71e64b2b", "venue_id": "v_d6985edf679d2681"}
+{"building_id": "b_0db26a494f7daf1c", "granularity": "legacy_unspecified", "name": "Church of Christ & St John", "space_id": "s_3092e636fd62c679", "venue_id": "v_9380344455ff6213"}
+{"building_id": "b_d613726958f5c687", "granularity": "legacy_unspecified", "name": "Clapham Leisure Centre", "space_id": "s_4ce483dd40a88da4", "venue_id": "v_4706d7705b35992c"}
+{"building_id": "b_9ab1cc921cdc6c24", "granularity": "legacy_unspecified", "name": "Cruising Association - CA House", "space_id": "s_1af5d933490661f7", "venue_id": "v_8dd3866ba6c0d1bf"}
+{"building_id": "b_1638b41db495a7f2", "granularity": "legacy_unspecified", "name": "Darul Umman Centre", "space_id": "s_a8a0dac15212c4e5", "venue_id": "v_132431fa5d558ee7"}
+{"building_id": "b_b82ae695d0d31e11", "granularity": "legacy_unspecified", "name": "Davenant Centre", "space_id": "s_69e1c0c0a647df31", "venue_id": "v_b702944df8c3ba17"}
+{"building_id": "b_6498b0abd6d5d881", "granularity": "legacy_unspecified", "name": "Elsdale Community Hall", "space_id": "s_cf9da9307c114cb5", "venue_id": "v_bf9af10f3fc080b0"}
+{"building_id": "b_0ae0270baea14a7a", "granularity": "legacy_unspecified", "name": "Emmott Senior Citizen Lodge", "space_id": "s_b7e433ffcd2bd852", "venue_id": "v_fd017c8cff9ec359"}
+{"building_id": "b_28573b41e99ce77f", "granularity": "legacy_unspecified", "name": "Ensign Youth Club", "space_id": "s_05fc206d7581f163", "venue_id": "v_bc15fc4300212d39"}
+{"building_id": "b_223222a4e74ce82b", "granularity": "legacy_unspecified", "name": "Epainos Ministries (New Testament Church of God)", "space_id": "s_f2d2adde6cf34615", "venue_id": "v_2b1bf89c56cab66b"}
+{"building_id": "b_161ef71ab859f819", "granularity": "legacy_unspecified", "name": "Fellows Court Community Centre", "space_id": "s_2a7aa3495631e7d2", "venue_id": "v_dcf8cdf2f5efca3f"}
+{"building_id": "b_a4bf819e206b15e6", "granularity": "legacy_unspecified", "name": "Frampton Park Community Hall", "space_id": "s_5178dfc7bb0208e7", "venue_id": "v_919099424b2546a5"}
+{"building_id": "b_abdd5e16ac3e5b58", "granularity": "legacy_unspecified", "name": "Francis Lee Community Centre", "space_id": "s_e25e0c9cc87be34b", "venue_id": "v_0b15e9007a176097"}
+{"building_id": "b_d7ba4546f8634cee", "granularity": "legacy_unspecified", "name": "Garrett Centre", "space_id": "s_629196966c690f66", "venue_id": "v_364fb4e66a019f15"}
+{"building_id": "b_04dccd661ed83f86", "granularity": "legacy_unspecified", "name": "Gascoyne 2 Community Centre", "space_id": "s_d6fac4594fac22d2", "venue_id": "v_41be9b816f05e511"}
+{"building_id": "b_9913305b249c4776", "granularity": "legacy_unspecified", "name": "Glamis Estate Tenants' Hall", "space_id": "s_fd377cba2c6884d6", "venue_id": "v_0507f58b8dad3667"}
+{"building_id": "b_ab6bf86a1f7839ab", "granularity": "legacy_unspecified", "name": "Haggerston Community Centre", "space_id": "s_c09b5edcdae06010", "venue_id": "v_93f1eb1bb449ca03"}
+{"building_id": "b_11cd29946372c541", "granularity": "legacy_unspecified", "name": "Hanbury Hall", "space_id": "s_74ff809b2cef1ebb", "venue_id": "v_60e25686fd23862d"}
+{"building_id": "b_c580b56d5cdaad5a", "granularity": "legacy_unspecified", "name": "Hanbury Street Community Room", "space_id": "s_9db9751a25dc801b", "venue_id": "v_a9040013459b6db2"}
+{"building_id": "b_7c3f57f9c8f7aae3", "granularity": "legacy_unspecified", "name": "Holiday Inn Whitechapel", "space_id": "s_1959dc789b620266", "venue_id": "v_3a18ac8c7e7d7ec8"}
+{"building_id": "b_150c4c5b3e3348f8", "granularity": "legacy_unspecified", "name": "Hub 67", "space_id": "s_f1ed61e668a22519", "venue_id": "v_5f668011bad484cd"}
+{"building_id": "b_127688977972deda", "granularity": "legacy_unspecified", "name": "Island House Community Centre", "space_id": "s_d984aa5abe23b7dc", "venue_id": "v_4d7cf58f6eda0d50"}
+{"building_id": "b_813db6abf0143dce", "granularity": "legacy_unspecified", "name": "Kirkland Centre", "space_id": "s_5a794726dc1f739b", "venue_id": "v_e43a124009e2e4f6"}
+{"building_id": "b_0754563a1c306b65", "granularity": "legacy_unspecified", "name": "Lambeth Town Hall", "space_id": "s_fc2e9288b83aebe4", "venue_id": "v_6756454d265b279d"}
+{"building_id": "b_a6bb52691ea36db3", "granularity": "legacy_unspecified", "name": "Lansbury HARCA Community Centre", "space_id": "s_303f3c7a6981fc1e", "venue_id": "v_a52b49986e0c29f0"}
+{"building_id": "b_f3fcc3ac370f4a14", "granularity": "legacy_unspecified", "name": "Lordship South Community Hall", "space_id": "s_b6ef7999b8e7584b", "venue_id": "v_7942408147a852ab"}
+{"building_id": "b_46da1b6763402c6a", "granularity": "legacy_unspecified", "name": "MTHR", "space_id": "s_c16d875ffc70cc1f", "venue_id": "v_eeadabaf47c3ce03"}
+{"building_id": "b_06d8c9d0c05977a3", "granularity": "legacy_unspecified", "name": "Minerva Community Centre", "space_id": "s_487060ec2cf53dce", "venue_id": "v_611828f64f906608"}
+{"building_id": "b_632ae84f0c4c1b5a", "granularity": "legacy_unspecified", "name": "Neuron Pod, Centre of the Cell", "space_id": "s_3fdd466f60d8f027", "venue_id": "v_3fe3aafd926ebb0b"}
+{"building_id": "b_72c7dbee37cc4e61", "granularity": "legacy_unspecified", "name": "New Kingshold Community Centre", "space_id": "s_e3052dc6a9ab4bb9", "venue_id": "v_014e7c7ea1f5636a"}
+{"building_id": "b_9edfff44cac7248a", "granularity": "legacy_unspecified", "name": "Nightingale Community Centre", "space_id": "s_cec1924db2fee833", "venue_id": "v_f9be207114f2fc7a"}
+{"building_id": "b_e41f0be7792f2efd", "granularity": "legacy_unspecified", "name": "Nisbet Community Centre", "space_id": "s_958810fbd10cf019", "venue_id": "v_8237568122bfe035"}
+{"building_id": "b_cc5f772af3e51a1f", "granularity": "legacy_unspecified", "name": "Ocean Estate Tenants and Leaseholders Association", "space_id": "s_0d75c55f38f13109", "venue_id": "v_a8c8dacb08de037d"}
+{"building_id": "b_b54ec6b80d81e9d8", "granularity": "legacy_unspecified", "name": "Osmani Centre", "space_id": "s_5f81fd1e8b80329c", "venue_id": "v_54506e64d6b95feb"}
+{"building_id": "b_5abedefe3b81b19c", "granularity": "legacy_unspecified", "name": "Oxford House Community Centre in Bethnal Green", "space_id": "s_b78eb5df4bd9da1c", "venue_id": "v_06f79e24aa26b278"}
+{"building_id": "b_334e4f9d3f0747e3", "granularity": "legacy_unspecified", "name": "Pitsea TRA Community Hall", "space_id": "s_945ad2c06e4f16c3", "venue_id": "v_21db5b91d7ae326e"}
+{"building_id": "b_97f810e6ecdd042a", "granularity": "legacy_unspecified", "name": "Poplar, Blackwall and District Rowing Club", "space_id": "s_8c86a4459836b9f2", "venue_id": "v_485711db7bfb33c4"}
+{"building_id": "b_0f2d2d2a2dc1cb0d", "granularity": "legacy_unspecified", "name": "Regents Community Hall", "space_id": "s_46dcd28c15289a46", "venue_id": "v_33a421c5d923af89"}
+{"building_id": "b_91bc59abc6d93c68", "granularity": "legacy_unspecified", "name": "Rich Mix", "space_id": "s_29d544fb57dd1475", "venue_id": "v_a3c2412fbb113ba5"}
+{"building_id": "b_c7160e3ed04e2000", "granularity": "legacy_unspecified", "name": "Shadwell Basin Outdoor Activity Centre", "space_id": "s_f77f6f16801fff6b", "venue_id": "v_ebe6b80f468c306d"}
+{"building_id": "b_4bd9128c1a25a682", "granularity": "legacy_unspecified", "name": "SocietyLinks", "space_id": "s_426a9b0c983f64a7", "venue_id": "v_d8b636a37134ecf8"}
+{"building_id": "b_a25930ac29f03b27", "granularity": "legacy_unspecified", "name": "Southern Grove Community Centre", "space_id": "s_1242851b6d73bc43", "venue_id": "v_046f0616bc009e3d"}
+{"building_id": "b_0be7b2422a5eae92", "granularity": "legacy_unspecified", "name": "St Anne's Church, Limehouse", "space_id": "s_4c6f3331e4c6822a", "venue_id": "v_c09f5a706cd6c1fa"}
+{"building_id": "b_c065e20964a1bafc", "granularity": "legacy_unspecified", "name": "St George in the East Church", "space_id": "s_f8c9d17221f50fdd", "venue_id": "v_ca063b4e0bbfb268"}
+{"building_id": "b_f0d99d53f3a1f37e", "granularity": "legacy_unspecified", "name": "St James the Less Church", "space_id": "s_7d2b139e5f7ac715", "venue_id": "v_61ac4ca74aca5d6d"}
+{"building_id": "b_4114e2dbd3affdf0", "granularity": "legacy_unspecified", "name": "St Johns Community Centre", "space_id": "s_3b598ca203f72c46", "venue_id": "v_43e9c375107ccd8d"}
+{"building_id": "b_543135da56885bbc", "granularity": "legacy_unspecified", "name": "St Margaret's House", "space_id": "s_2f107f2c63ff5fae", "venue_id": "v_4aabae74963c706a"}
+{"building_id": "b_b5445e84accb2a5d", "granularity": "legacy_unspecified", "name": "St Matthias Community Centre", "space_id": "s_d0d33909443d4481", "venue_id": "v_7a4f185c6796dce1"}
+{"building_id": "b_7ad8723256b60342", "granularity": "legacy_unspecified", "name": "St Paul's Bow Common Church", "space_id": "s_f96396bc37c103d1", "venue_id": "v_8368301f1da9cd60"}
+{"building_id": "b_ed3e176205f24e4f", "granularity": "legacy_unspecified", "name": "St Paul's Church (Tower Hamlets directory)", "space_id": "s_861b8a792527db6a", "venue_id": "v_777810d60d7bcc2e"}
+{"building_id": "b_fa8e888ca90fee4a", "granularity": "legacy_unspecified", "name": "St Peters North Community Centre", "space_id": "s_927045779224065e", "venue_id": "v_d6f64392b953854f"}
+{"building_id": "b_7c7e733baec4e46e", "granularity": "legacy_unspecified", "name": "Tarling East Community Centre", "space_id": "s_719c6ef974d41058", "venue_id": "v_446d6bec318253cb"}
+{"building_id": "b_73b2ee1eeeadf402", "granularity": "legacy_unspecified", "name": "The Ecology Pavilion, Mile End Park", "space_id": "s_22ce42520a6919c2", "venue_id": "v_875d12fc18ffdd2c"}
+{"building_id": "b_add12d0386011b7b", "granularity": "legacy_unspecified", "name": "The Linc Centre", "space_id": "s_d41499d659cc7509", "venue_id": "v_fc7e5bd9c87f2bc3"}
+{"building_id": "b_843913e2f6c65b3b", "granularity": "legacy_unspecified", "name": "The Space (Isle of Dogs)", "space_id": "s_d16753a03adb34a1", "venue_id": "v_73ca6db9d0c8bd0a"}
+{"building_id": "b_bd3a18f3c7d15e0e", "granularity": "legacy_unspecified", "name": "Tiller Centre", "space_id": "s_1b93931b378c02b1", "venue_id": "v_d115857ed5cc01fc"}
+{"building_id": "b_ed1d4661657f53d2", "granularity": "legacy_unspecified", "name": "Tramshed Community Centre", "space_id": "s_07df5d0285e01215", "venue_id": "v_b8c4e972750013ab"}
+{"building_id": "b_ad62c99f2f9939e1", "granularity": "legacy_unspecified", "name": "Tredegar Community Centre", "space_id": "s_c97f4c7bba04da5b", "venue_id": "v_4808b847a002dcb9"}
+{"building_id": "b_830357298ac50f80", "granularity": "legacy_unspecified", "name": "Victoria Park Baptist Church", "space_id": "s_c272aa379a4d926a", "venue_id": "v_4950a9c5d3861fc0"}
+{"building_id": "b_9632f9160a9f8b43", "granularity": "legacy_unspecified", "name": "Whitechapel Gallery", "space_id": "s_38c9d1382f340380", "venue_id": "v_3b96d6b93068c711"}
+{"building_id": "b_ce322cee9fa6a669", "granularity": "legacy_unspecified", "name": "Wise Mind Tuition Centre", "space_id": "s_809b4347f91b1c68", "venue_id": "v_daf12e9cf4e7b427"}
+{"building_id": "b_cba650783922faa1", "granularity": "legacy_unspecified", "name": "Wodenham Gardens Community Room", "space_id": "s_32ce512459a94988", "venue_id": "v_c47efce2cbed87ac"}
+{"building_id": "b_09d3587406e0d333", "granularity": "legacy_unspecified", "name": "York Hall", "space_id": "s_d5a3746c7a05c0c1", "venue_id": "v_86dafebe06350e1e"}
+{"building_id": "b_123db886e0ca3025", "granularity": "legacy_unspecified", "name": "Zander Court Club Room", "space_id": "s_9d3e0800959ce5ae", "venue_id": "v_f67f11a984dacbd6"}
+{"building_id": "b_13acbe58ac8c994f", "granularity": "legacy_unspecified", "name": "deafPlus", "space_id": "s_451591ef18735e94", "venue_id": "v_aba1824946e80236"}
+{"building_id": "b_8511de4d239eb349", "granularity": "legacy_unspecified", "name": "Copeland Park - Unit 08", "space_id": "s_6967d8cfc60b7648", "venue_id": "v_29b612e1970e4246"}
+{"building_id": "b_4413991b79a41436", "granularity": "legacy_unspecified", "name": "Deptford Storehouse", "space_id": "s_5f0f94366a5daadd", "venue_id": "v_2c3b55068193a3c0"}
+{"building_id": "b_26fcd429b2001c4e", "granularity": "legacy_unspecified", "name": "Hugh Cubitt Community Centre", "space_id": "s_7e651c7910908808", "venue_id": "v_a9150163df402fa5"}
+{"building_id": "b_a2f221ad7117d1e2", "granularity": "legacy_unspecified", "name": "Studio Spaces - Events", "space_id": "s_c5a5c58f2ff5e65f", "venue_id": "v_02f2bbadef847fc7"}
+{"building_id": "b_d0f06bf33fb11097", "granularity": "legacy_unspecified", "name": "Tanner Warehouse", "space_id": "s_5d7cad6e9111b3a2", "venue_id": "v_f6e7c5eb05ffd431"}
+{"building_id": "b_596e60c669c9d384", "granularity": "legacy_unspecified", "name": "British Museum - BP Lecture Theatre", "space_id": "s_d542d5c8e9d76e1c", "venue_id": "v_fb3374fc82641adc"}
+{"building_id": "b_397686559a84aa5f", "granularity": "legacy_unspecified", "name": "Courtauld - Venue Hire", "space_id": "s_10ddf3b46c4cef06", "venue_id": "v_51f901ef70ecb2f4"}
+{"building_id": "b_b831626571bae075", "granularity": "legacy_unspecified", "name": "London Museum - London Wall Event Rooms", "space_id": "s_4e56c3b4ceba32df", "venue_id": "v_9668249adeec0e69"}
+{"building_id": "b_dbe858ce3141ec8d", "granularity": "legacy_unspecified", "name": "National Gallery - Event Spaces", "space_id": "s_ff30e5a0615312cf", "venue_id": "v_4f357a614a5f1aef"}
+{"building_id": "b_ecc487e623d03941", "granularity": "legacy_unspecified", "name": "Science Museum - Events Spaces", "space_id": "s_da2d9302d3f6aed2", "venue_id": "v_33a7238c5ccac0a8"}
+{"building_id": "b_d6fe14913f1a8aca", "granularity": "legacy_unspecified", "name": "The Design Museum - Event Spaces", "space_id": "s_0e4dc192d6797132", "venue_id": "v_6098918a7e0c3df5"}
+{"building_id": "b_187a0beeb09293ca", "granularity": "legacy_unspecified", "name": "V&A - Venue Hire", "space_id": "s_64a2812fa9943848", "venue_id": "v_ca57619734c56ad5"}
+{"building_id": "b_8f6b33a59cb0e9d1", "granularity": "legacy_unspecified", "name": "The Arc Centre, Islington", "space_id": "s_26c4ec4ca80c2ccc", "venue_id": "v_ad85bf4fdb9c6875"}
+{"building_id": "b_66604077d68f34c4", "granularity": "legacy_unspecified", "name": "Prince Charles Cinema - Screen 1", "space_id": "s_e74b766f7318938a", "venue_id": "v_b3f462c2187e9b3c"}
+{"building_id": "b_7ca745eccde86f85", "granularity": "legacy_unspecified", "name": "BFI IMAX - Venue Hire", "space_id": "s_8ee327acb65e544a", "venue_id": "v_3e1e43b293660154"}
+{"building_id": "b_1242ab21bd318e15", "granularity": "legacy_unspecified", "name": "Close-Up Film Centre - Venue Hire", "space_id": "s_2134292846b717ee", "venue_id": "v_e7626c7a76a344e2"}
+{"building_id": "b_0aa88f452c7fd72e", "granularity": "legacy_unspecified", "name": "Coldharbour Blue - Private Hire", "space_id": "s_5af31faa85430e84", "venue_id": "v_518cedcebd7ae495"}
+{"building_id": "b_0d4e0ef1555fbebd", "granularity": "legacy_unspecified", "name": "Docklands Sailing & Watersports Centre", "space_id": "s_a8fd1dac02e81ae2", "venue_id": "v_3d10231283c61260"}
+{"building_id": "b_d2b90108fef9dda9", "granularity": "legacy_unspecified", "name": "Electric Cinema - Private Hire", "space_id": "s_80d5a315fcf4bb49", "venue_id": "v_58275ede777574ab"}
+{"building_id": "b_2f64ee48c93df6a6", "granularity": "legacy_unspecified", "name": "John Orwell Sports Centre", "space_id": "s_8d11b27c7f3829e7", "venue_id": "v_de2eb2550be1d23f"}
+{"building_id": "b_ae5918ac932b26fc", "granularity": "legacy_unspecified", "name": "Langdon Park Sports & Community Centre", "space_id": "s_d2d49cb130b6c389", "venue_id": "v_6a3b469a09c005d0"}
+{"building_id": "b_e15d1b1f78392bd0", "granularity": "legacy_unspecified", "name": "The Castle Cinema - Private Hire", "space_id": "s_1351f7a004e298a6", "venue_id": "v_4e3c9b67c09d59df"}
+{"building_id": "b_c17c790285015b47", "granularity": "legacy_unspecified", "name": "Whitechapel Sports Centre", "space_id": "s_670d13d88fea150b", "venue_id": "v_52d0025c87614a40"}
+{"building_id": "b_50ebcdeb3f59d4a9", "granularity": "room", "name": "Auditorium", "space_id": "s_ffaa93ce29c743b7", "venue_id": "v_2b75f928587fca8f"}
+{"building_id": "b_50ebcdeb3f59d4a9", "granularity": "room", "name": "Rooftop Terrace", "space_id": "s_041b7617f685e77b", "venue_id": "v_9ad1a5cfda02ce24"}
+{"building_id": "b_50ebcdeb3f59d4a9", "granularity": "room", "name": "Lounge Bar", "space_id": "s_88491e475cc71872", "venue_id": "v_f88fdd062e6c35ea"}
+{"building_id": "b_9da001f017cd87df", "granularity": "room", "name": "Lounge Bar", "space_id": "s_05e3386ec2ae424c", "venue_id": "v_c5e6593a53cb7ee0"}
+{"building_id": "b_9da001f017cd87df", "granularity": "room", "name": "Wellness Studio", "space_id": "s_c3007a3308e0b59a", "venue_id": "v_bed90a7ee279dba9"}
+{"building_id": "b_9da001f017cd87df", "granularity": "room", "name": "Rooftop Terrace", "space_id": "s_5bbbd178702d90f7", "venue_id": "v_8d761f493e8861f5"}
+{"building_id": "b_5a103cb6bc7450b0", "granularity": "room", "name": "Zen Studio and Garden", "space_id": "s_6f779da9d2527ab5", "venue_id": "v_e615037832d1464c"}
+{"building_id": "b_5a103cb6bc7450b0", "granularity": "room", "name": "Lounge Bar", "space_id": "s_7a2c005f6317a0de", "venue_id": "v_76dc8fe4b4a64a91"}
+{"building_id": "b_bd70f3c392d1e9db", "granularity": "room", "name": "Rooftop Terrace", "space_id": "s_9d63d3b561e603c0", "venue_id": "v_5821fe14e07f7e67"}
+{"building_id": "b_bd70f3c392d1e9db", "granularity": "room", "name": "Lounge Bar", "space_id": "s_01c3e2e694757029", "venue_id": "v_0088e683a9b25d7a"}
+{"building_id": "b_98874180d764acb4", "granularity": "room", "name": "Outdoor Courtyard", "space_id": "s_6110ad0ad9df2b5a", "venue_id": "v_e77d1a66dd0ab765"}
+{"building_id": "b_98874180d764acb4", "granularity": "room", "name": "Lounge Bar", "space_id": "s_206c05e65f99ffc6", "venue_id": "v_4b234bbaff3bb8ee"}
+{"building_id": "b_9aba8b5cf9cbacbd", "granularity": "room", "name": "Room 1", "space_id": "s_6953bdf4cac3f263", "venue_id": "v_63d335fb23588e66"}
+{"building_id": "b_9aba8b5cf9cbacbd", "granularity": "room", "name": "Room 2 and kitchenette", "space_id": "s_d98f522607f7fd45", "venue_id": "v_9cb1ea6e9ed67a08"}
+{"building_id": "b_cc3ac1a68226c621", "granularity": "room", "name": "Room and kitchenette", "space_id": "s_50afac97b05b5e08", "venue_id": "v_71a294a09a020f68"}
+{"building_id": "b_857f3da5b47af740", "granularity": "room", "name": "Room and kitchenette", "space_id": "s_378d489db440a96a", "venue_id": "v_bff8a633ba0b2ced"}
+{"building_id": "b_ec00b64432b7e855", "granularity": "room", "name": "Room and kitchenette", "space_id": "s_90caf12836aee496", "venue_id": "v_9455e4fd11083955"}
+{"building_id": "b_a5216d333aab64b8", "granularity": "room", "name": "Room and kitchenette", "space_id": "s_63f1867f11721548", "venue_id": "v_28a449820a148ea2"}
+{"building_id": "b_ec00b64432b7e855", "granularity": "room", "name": "Makerspace", "space_id": "s_61b13b19150dc2a5", "venue_id": "v_ed1727862ab845f9"}
+{"building_id": "b_ccbfdda048096c3a", "granularity": "room", "name": "Lecture theatres", "space_id": "s_9e5621f41db1e371", "venue_id": "v_25d934ebd1e27510"}
+{"building_id": "b_2432cdcbf9294bd4", "granularity": "room", "name": "Lecture theatres", "space_id": "s_32625442f797ae31", "venue_id": "v_5f2d398601ebbd2b"}
+{"building_id": "b_5c2d4c0852964e21", "granularity": "room", "name": "Lecture theatres", "space_id": "s_a542b4605d59ef21", "venue_id": "v_a7e5070c4957ee56"}
+{"building_id": "b_dea85c81eccff2e2", "granularity": "room", "name": "Fyvie Hall", "space_id": "s_31be2793c73d0cb9", "venue_id": "v_81be5113394c6f2f"}
+{"building_id": "b_244b548e9ce7a090", "granularity": "room", "name": "Portland Hall", "space_id": "s_ece468232180c296", "venue_id": "v_702083dde41a3548"}
+{"building_id": "b_244b548e9ce7a090", "granularity": "room", "name": "G.03", "space_id": "s_4354c92dd6815237", "venue_id": "v_2a16bbad7ca731a6"}
+{"building_id": "b_dea85c81eccff2e2", "granularity": "room", "name": "UG.05", "space_id": "s_0523fc1b88d018e9", "venue_id": "v_479270f2f227f6ff"}
+{"building_id": "b_134e911a5b2f5b08", "granularity": "room", "name": "Main Hall", "space_id": "s_d6eca766a578c7eb", "venue_id": "v_55161b37d87fcd5a"}
+{"building_id": "b_134e911a5b2f5b08", "granularity": "room", "name": "Small Hall", "space_id": "s_a2c2a855808c553f", "venue_id": "v_0d4e1790b7f17388"}
+{"building_id": "b_b95bf1d4692f4010", "granularity": "room", "name": "Multipurpose room", "space_id": "s_37ef35abb6224190", "venue_id": "v_24556ef2f12d636f"}
+{"building_id": "b_e4d912fee7d61a2e", "granularity": "room", "name": "Committee Room 1", "space_id": "s_f3f68c9d23c234da", "venue_id": "v_7eea22878d78d556"}
+{"building_id": "b_e4d912fee7d61a2e", "granularity": "room", "name": "Committee Room 2", "space_id": "s_eb338d2db4621875", "venue_id": "v_45d94512e51cafd2"}
+{"building_id": "b_e4d912fee7d61a2e", "granularity": "room", "name": "Committee Room 3", "space_id": "s_b59b837d0727b5a7", "venue_id": "v_f9bad63ef7b15d59"}
+{"building_id": "b_e4d912fee7d61a2e", "granularity": "room", "name": "Committee Room 4", "space_id": "s_9a9b17bba5dfdf14", "venue_id": "v_efdfe69e785c321b"}
+{"building_id": "b_e4d912fee7d61a2e", "granularity": "room", "name": "Committee Room 5", "space_id": "s_0ac08b3d686c74e4", "venue_id": "v_a5509fb792965161"}
+{"building_id": "b_08aac60860e9f366", "granularity": "room", "name": "Room 11", "space_id": "s_02fcbf514247632b", "venue_id": "v_bcd3173d4d56d7ec"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Arts One", "space_id": "s_3451f5fce55ba4f0", "venue_id": "v_77815bd82991cec5"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Arts Two", "space_id": "s_cd94df51e158fbca", "venue_id": "v_9e6596ac9610b677"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Bancroft", "space_id": "s_863c3972ac1294f6", "venue_id": "v_337b4c3877fba8e0"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Geography Building", "space_id": "s_7c040a0f0d15708f", "venue_id": "v_92a19358a602896b"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "G.O. Jones", "space_id": "s_03af32609215d8bd", "venue_id": "v_2b20c79a7f9c4b0a"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Graduate Centre", "space_id": "s_a9f39c535c3cccf5", "venue_id": "v_1cbf949582fbaa13"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Laws Building", "space_id": "s_a5fbc866705ae94e", "venue_id": "v_6e3c4d767ab02392"}
+{"building_id": "b_b5ebfa813f5aa4fd", "granularity": "room", "name": "Maths Building", "space_id": "s_90147341bd7fbc74", "venue_id": "v_c31effdfbb037a2a"}
+{"building_id": "b_fe998d065d54f729", "granularity": "room", "name": "Great Hall", "space_id": "s_728c70d3c75ba2ab", "venue_id": "v_8e74af10cb81bd01"}
+{"building_id": "b_fe998d065d54f729", "granularity": "room", "name": "Lecture theatres", "space_id": "s_c71a86aef19d9370", "venue_id": "v_d30a1f6fcacb21ea"}
+{"building_id": "b_df04a2d3378bdcc3", "granularity": "room", "name": "Colette Bowe Room", "space_id": "s_2baa87245bb07ae3", "venue_id": "v_cef69bef41f7592e"}
+{"building_id": "b_df04a2d3378bdcc3", "granularity": "room", "name": "The Octagon", "space_id": "s_782d607b52485771", "venue_id": "v_d7c43d93083ae02f"}
+{"building_id": "b_431cc039c414afc1", "granularity": "room", "name": "Blizard Building", "space_id": "s_a257f36f6e28bdaa", "venue_id": "v_f847fbc17b05e9b6"}
+{"building_id": "b_431cc039c414afc1", "granularity": "room", "name": "Garrod Building", "space_id": "s_14aeef22f160dee9", "venue_id": "v_b3ea14643c306b58"}
+{"building_id": "b_431cc039c414afc1", "granularity": "room", "name": "Innovation Centre", "space_id": "s_afccfd4c5f7a92e9", "venue_id": "v_5ae7503cbb5f2933"}
+{"building_id": "b_d0490dbffb9524fa", "granularity": "room", "name": "Great Hall", "space_id": "s_6596af8f9630ecf6", "venue_id": "v_39e7ae5f1b93db21"}
+{"building_id": "b_d0490dbffb9524fa", "granularity": "room", "name": "Lecture theatres", "space_id": "s_1c974ad049f436b5", "venue_id": "v_1242c48755f5d929"}
+{"building_id": "b_7e270ffb60310748", "granularity": "room", "name": "Event spaces", "space_id": "s_acfa0adc48dd8898", "venue_id": "v_a252724eb7578dd4"}
+{"building_id": "b_51a522d74822baba", "granularity": "room", "name": "Event spaces", "space_id": "s_aa8d3c9f405a3702", "venue_id": "v_146ed9debb0ee8c7"}
+{"building_id": "b_02a4f01f164ef18f", "granularity": "room", "name": "Meeting rooms", "space_id": "s_d4e01829e388426f", "venue_id": "v_bbbdcb241148cf41"}
+{"building_id": "b_3350d34a589fee13", "granularity": "room", "name": "Rooms and event spaces", "space_id": "s_e882cdf56897675a", "venue_id": "v_fd2ccf38ede3c3be"}
+{"building_id": "b_77b7793f321a1f96", "granularity": "room", "name": "Event spaces", "space_id": "s_b24c714b31ce7a60", "venue_id": "v_04dd1897399e9f8a"}
+{"building_id": "b_1109c7bcddceecfa", "granularity": "room", "name": "Whole venue", "space_id": "s_6104b1882cb09e82", "venue_id": "v_a26f552b1e77ed03"}
+{"building_id": "b_fd71f3987cb65fb2", "granularity": "room", "name": "Meeting rooms", "space_id": "s_c7185c6826ab295e", "venue_id": "v_75213158859cc3fa"}
+{"building_id": "b_81315e9729c67a8c", "granularity": "room", "name": "Hire spaces", "space_id": "s_761dd2462c866666", "venue_id": "v_9a8aaad850692674"}
+{"building_id": "b_5e3b78975d7f9380", "granularity": "room", "name": "Community space", "space_id": "s_ae020d9c1de9b65e", "venue_id": "v_d2d4ba79b9c1c0ae"}
+{"building_id": "b_2c066242baebd8a8", "granularity": "room", "name": "Hall spaces", "space_id": "s_5b3ddc12473279e6", "venue_id": "v_8bc5768c910781c9"}
+{"building_id": "b_3734d783ac1052ef", "granularity": "room", "name": "Community rooms", "space_id": "s_8d8c4ef84537f4c8", "venue_id": "v_8f03e9d35485c35d"}
+{"building_id": "b_6427ddf4e56307eb", "granularity": "room", "name": "Hire facilities", "space_id": "s_46afaed0adf7de1f", "venue_id": "v_8d29bcb3f112c090"}
+{"building_id": "b_498867a391cf38fc", "granularity": "room", "name": "Event spaces", "space_id": "s_5715e6ed3b62eb32", "venue_id": "v_f5146f1b2b234199"}
+{"building_id": "b_ed9aa6c84664f28a", "granularity": "room", "name": "Great Hall", "space_id": "s_86d9ce9b964fbff6", "venue_id": "v_27ce33536261b35e"}
+{"building_id": "b_d1e9a662e264c4fc", "granularity": "room", "name": "Main Hall", "space_id": "s_260dfae8bb754e45", "venue_id": "v_7dd7051568ec7127"}
+{"building_id": "b_d1e9a662e264c4fc", "granularity": "room", "name": "Meeting Room 2", "space_id": "s_038fbd8327d50b50", "venue_id": "v_bfa4b411e332fdcb"}
+{"building_id": "b_d1e9a662e264c4fc", "granularity": "room", "name": "Meeting Room 4", "space_id": "s_d747011ddfd7cb91", "venue_id": "v_c991a57c7ec589d9"}
+{"building_id": "b_d1e9a662e264c4fc", "granularity": "room", "name": "Meeting Room 5", "space_id": "s_e45fe48e7b97e910", "venue_id": "v_cec6f45a7b6f4c55"}
+{"building_id": "b_d1e9a662e264c4fc", "granularity": "room", "name": "Meeting Room 6", "space_id": "s_4b6b71657e9321b4", "venue_id": "v_8ee5cc14deba3480"}
+{"building_id": "b_9766cabe3ad5b122", "granularity": "room", "name": "Hall", "space_id": "s_a23de58d2dae2170", "venue_id": "v_d16752ec5986af1c"}
+{"building_id": "b_5e3b78975d7f9380", "granularity": "room", "name": "Main hall", "space_id": "s_db5db33745c42b8c", "venue_id": "v_c48acb59a2426e72"}
+{"building_id": "b_cf557a6bd1b2af2f", "granularity": "room", "name": "Meeting Room", "space_id": "s_803ee6016e591dc1", "venue_id": "v_66492b6f83c4d714"}
+{"building_id": "b_752eb95822b987aa", "granularity": "room", "name": "Meeting Room", "space_id": "s_12187e79d65c4fab", "venue_id": "v_a1ba72dbdad0ee7d"}
+{"building_id": "b_ed1bf551ebfec313", "granularity": "room", "name": "Community Room", "space_id": "s_cb66cd5ebd3a4bb1", "venue_id": "v_6300507fef1daae3"}
+{"building_id": "b_7f1362dbd55f0590", "granularity": "room", "name": "Peston Lecture Theatre", "space_id": "s_a2b1df7a362f8829", "venue_id": "v_bed53e5a20e29600"}
+{"building_id": "b_4ce2bcaf3400c0d7", "granularity": "room", "name": "Mason Lecture Theatre", "space_id": "s_7115f26d35192046", "venue_id": "v_832722e65917b8b0"}
+{"building_id": "b_4ce2bcaf3400c0d7", "granularity": "room", "name": "Interconnecting breakout rooms 1.13 and 1.13a", "space_id": "s_66a2e9efb710dbcc", "venue_id": "v_67af198c72dac5f8"}
+{"building_id": "b_4ce2bcaf3400c0d7", "granularity": "room", "name": "Breakout room 1.15", "space_id": "s_206504b6277a9df2", "venue_id": "v_b8e5a4cddc848f90"}
+{"building_id": "b_237bbdcaa400c69f", "granularity": "room", "name": "Gallery", "space_id": "s_1cbd33232528e36c", "venue_id": "v_1f1ae6ce4cca294e"}
+{"building_id": "b_b7d9145e3ab69f18", "granularity": "room", "name": "Facilities", "space_id": "s_b2deba272da3c581", "venue_id": "v_ba2655f6a89abf09"}
+{"building_id": "b_7f892a31b24c8a55", "granularity": "room", "name": "Venue hire", "space_id": "s_7baa5c2637579e14", "venue_id": "v_ef2121561167eeda"}
+{"building_id": "b_939dc8a4725f138d", "granularity": "room", "name": "Venue hire", "space_id": "s_05df7c26e0f78191", "venue_id": "v_afe31ca9acb59221"}
+{"building_id": "b_c2b613965beed85a", "granularity": "room", "name": "Venue hire", "space_id": "s_7b66d3a9f90fec04", "venue_id": "v_b7a8d975c4f37009"}
+{"building_id": "b_6e00b316cba2bfa5", "granularity": "room", "name": "Boyd Campbell Hall", "space_id": "s_eac4274cc79aa01c", "venue_id": "v_77a8cd01dc8fc615"}
+{"building_id": "b_6d497ee96a1d3740", "granularity": "room", "name": "Venue hire", "space_id": "s_a151448ad7931df3", "venue_id": "v_309021676a423567"}
+{"building_id": "b_06d5816567c3a9c7", "granularity": "room", "name": "Main Hall", "space_id": "s_53323333c4cc126c", "venue_id": "v_e0ed62ad11067a81"}
+{"building_id": "b_5d84f204d3f80d75", "granularity": "room", "name": "Event meeting spaces", "space_id": "s_288cabd64ebb2953", "venue_id": "v_c33ece37e2973b5e"}
