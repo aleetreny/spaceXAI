@@ -1,7 +1,7 @@
 {
   "web": {
     "branches": ["feature/catalog-ui"],
-    "paths": ["index.html", "event.html", "app.js", "styles.css", "discover.*", "organiser.*", "assets/*", "tests/web/*"]
+    "paths": ["index.html", "desk.html", "event.html", "app.js", "styles.css", "discover.*", "organiser.*", "assets/*", "tests/web/*"]
   },
   "data": {
     "branches": ["feature/catalog-data"],
