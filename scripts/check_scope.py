@@ -19,7 +19,8 @@ def main():
     branch = args.branch or git("branch", "--show-current")
     roles = json.loads(Path("coordination/roles.json").read_text())
     matches = [name for name, role in roles.items() if any(
-        branch == prefix or branch.startswith(prefix + "/")
+        # "-" as well as "/": git cannot create prefix/task while prefix exists.
+        branch == prefix or branch.startswith((prefix + "/", prefix + "-"))
         for prefix in role["branches"])]
     if len(matches) != 1:
         sys.exit(f"Branch {branch!r}: use one role branch prefix from coordination/roles.json")
