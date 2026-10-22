@@ -5,7 +5,7 @@
   },
   "data": {
     "branches": ["feature/catalog-data"],
-    "paths": ["supabase/*", "api/*", "scripts/import-*", "tests/data/*", "data.js", "package.json", "package-lock.json", "requirements.txt", "pyproject.toml", "uv.lock", ".env.example", ".gitignore", "vercel.json", "Dockerfile", "compose.yaml"]
+    "paths": ["supabase/*", "api/*", "scripts/import-*", "tests/data/*", "venues.js", "data.js", "package.json", "package-lock.json", "requirements.txt", "pyproject.toml", "uv.lock", ".env.example", ".gitignore", "vercel.json", "Dockerfile", "compose.yaml"]
   },
   "agent": {
     "branches": ["feature/discovery-agent"],
