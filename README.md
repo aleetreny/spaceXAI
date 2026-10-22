@@ -4,6 +4,10 @@ Mesa de collab para el [Grok Bot Community Engineering London Hackathon](https:/
 
 Repo: https://github.com/aleetreny/spaceXAI
 
+## Ampliación para el track de venues
+
+El diseño para conectar venues y comunidades en nuestra propia web con búsqueda en lenguaje natural está en [docs/architecture.md](docs/architecture.md). El [contrato de datos y API](docs/contracts.md) y el [reparto entre tres personas con sus agentes](docs/team-plan.md) preparan la implementación. El diseño usa Supabase para datos y comentarios originales, Cognee para construir su grafo de referencias y Grok para consultarlo en lenguaje natural. El catálogo sigue funcionando si falla la búsqueda de comentarios. Son especificaciones; las integraciones siguen pendientes.
+
 ## Arrancar
 
 ```bash

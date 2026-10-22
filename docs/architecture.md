@@ -1,0 +1,115 @@
+# Arquitectura de venues y comunidades
+
+Estado: diseño para implementar, 22 octubre 2026. Sponsors confirmados por el equipo: créditos de Grok, Supabase, Cognee y Notion. El acceso concreto y el hosting siguen pendientes. Este documento no acredita ninguna integración activa.
+
+La web propia es la interfaz pública del producto. El equipo ha decidido prescindir de Notion; disponer de acceso al sponsor no obliga a integrarlo.
+
+## Problema y uso
+
+Cualquier visitante puede buscar comunidades y espacios en lenguaje natural. Solo los organizadores aprobados pueden mantener fichas. La demo central consiste en que dos organizadores añadan venues reales y un tercero encuentre uno y prepare una solicitud.
+
+Ejemplo de consulta, no un resultado real: "Busco un espacio gratis para 80 personas cerca de Old Street el próximo jueves". La respuesta presenta coincidencias documentadas, fuentes y condiciones por confirmar. Tener horario de jueves no confirma disponibilidad para ese jueves.
+
+El visitante puede escoger dos comunidades y continuar al escritorio actual para crear una página compartible. Las solicitudes son borradores para copiar. El envío requiere un flujo posterior explícito.
+
+## Cómo funciona el prototipo actual
+
+`data.js` contiene las comunidades con sus fuentes y el motor determinista de colaboración. Expone `window.SAME_ROOM`. `app.js` renderiza el escritorio de `index.html` y la página de `event.html`. Los borradores viven en `sessionStorage`; la página se comparte mediante parámetros de URL. No hay servidor de aplicación, login ni llamadas a sponsors.
+
+`supabase/schema.sql` es un esquema de partida sin conexión demostrada. Incluye una política `anon insert events` que debe sustituirse antes de habilitar escrituras remotas. El esquema actual no cumple el modelo de organizadores aprobados.
+
+## Forma elegida
+
+Se conserva la web estática y se añaden páginas de descubrimiento y edición, una API de servidor y Supabase. Las rutas existentes siguen disponibles con `python3 -m http.server 4321`. Las funciones conectadas requieren además el servidor API, cuyo hosting se elige según el acceso del equipo.
+
+- Web propia: catálogo, filtros, chat público, fichas, fuentes y formulario de organizador. Las fichas y páginas compartibles se consultan en esta web.
+- Supabase: datos canónicos, autenticación, permisos por fila y búsquedas geográficas con PostGIS.
+- Grok: interpreta la consulta y selecciona identificadores sobre resultados autorizados. Las claves permanecen en el servidor.
+- Cognee: construye y consulta el grafo derivado de comentarios reales sobre venues y comunidades, con referencias a la evidencia original.
+
+Grok usa herramientas de lectura como `searchVenues`, `searchCommunities` y `getPublicFacts`. La API valida filtros, límites, identificadores y revisiones. Las tarjetas muestran datos de la base, no afirmaciones factuales redactadas libremente por el modelo. Una cita válida por sí sola no demuestra que una frase sea verdadera.
+
+Supabase también resuelve quién organizó cada evento y en qué espacio, mediante relaciones y procedencia. Este historial y sus citas no requieren Cognee. Si falla Grok, queda disponible la búsqueda por filtros, identificada como tal.
+
+## Cognee como grafo de comentarios
+
+Cognee forma parte del diseño para buscar referencias cualitativas sobre venues y comunidades. Supabase guarda comentarios originales, permisos y revisiones; Cognee construye un grafo derivado para recuperar experiencias relacionadas. Grok consulta ese grafo mediante una herramienta controlada del servidor.
+
+El grafo conecta venues y comunidades con comentarios, aspectos mencionados y el contexto de la experiencia. Los aspectos iniciales son ruido, accesibilidad, equipamiento y tipo de actividad. Cada relación extraída conserva el ID del comentario, revisión, fragmento exacto y fecha. Se distingue lo que afirma el autor de la interpretación de la extracción. La autoría pública solo se muestra con permiso; no se crean perfiles de personas en el grafo del MVP.
+
+Ejemplo de consulta, no testimonio ni dato para sembrar: "Quiero un venue muy silencioso para una charla". El flujo propuesto es:
+
+1. Grok separa requisitos estructurados y preferencia acústica. Supabase filtra ubicación, capacidad y condiciones conocidas.
+2. Grok llama a `searchCommentEvidence` con los candidatos y el aspecto ruido. Si no hay filtros estructurados, la herramienta puede recuperar candidatos del grafo y validarlos después contra el catálogo público.
+3. Cognee recupera el subgrafo pertinente y las referencias a comentarios. El servidor verifica que cada fuente siga publicada, autorizada y en su revisión vigente. Si no puede reconstruir la evidencia original, descarta la relación.
+4. La web presenta el venue y las referencias favorables y contradictorias, con fragmento, fecha y contexto del evento cuando se conoce. Un control "Ver referencias" permite inspeccionar el subgrafo acotado devuelto, sin exponer el grafo completo.
+5. Grok explica la recomendación como experiencia reportada. No garantiza silencio ni deduce disponibilidad o precio. Sin comentarios pertinentes indica "sin referencias sobre ruido"; eso no significa que el venue sea ruidoso.
+
+El mismo mecanismo sirve para buscar comunidades por experiencias descritas, por ejemplo actividades para principiantes, siempre con evidencia real. Una preferencia subjetiva influye en el orden de recomendaciones, pero no altera los campos confirmados del catálogo. Las contradicciones y el contexto temporal permanecen visibles. El subgrafo se entrega como nodos y relaciones con fuentes; la representación visual puede añadirse después de las tarjetas de evidencia.
+
+Solo se indexan comentarios reales publicados por organizadores aprobados, o importados con permiso y procedencia comprobable. La primera versión no ingiere chats privados ni genera reseñas. Un organizador aprobado puede aportar comentarios sobre entidades ajenas, identificados como su experiencia; eso no le concede permiso para modificar sus fichas. La moderación decide su publicación.
+
+La actualización del grafo ocurre fuera de la petición de búsqueda, con trabajos idempotentes por comentario y revisión. La API excluye de inmediato comentarios retirados o versiones antiguas, aunque la limpieza de Cognee siga pendiente. La memoria es reconstruible desde Supabase y nunca decide permisos. Los textos se tratan como datos, no como instrucciones para Grok.
+
+Cognee se incluye en el alcance de producto, pero su fallo no bloquea el catálogo. Si tarda o falla, se devuelven los resultados estructurados con el aviso "referencias de comentarios temporalmente no disponibles". No se inventan resultados ni se afirma haber consultado el grafo.
+
+Estimación de esfuerzo adicional, no medición: 6–10 horas-persona para comentarios y moderación básicos, indexación, recuperación de un subgrafo acotado, tarjetas de evidencia y pruebas de actualización, contradicciones y fallo. Supone catálogo y API operativos y un servicio Cognee accesible; verificar acceso puede llevar 30–60 minutos iniciales. Un visor interactivo completo del grafo y un despliegue propio quedan fuera de esta estimación. El coste monetario depende del plan y procesamiento, todavía sin verificar.
+
+La demo requiere comentarios reales sobre venues y comunidades. Se prueba una consulta cualitativa, una contradicción, ausencia de referencias y caída de Cognee. Se compara también con Grok leyendo los mismos comentarios para evaluar calidad, sin presentar una mejora como medida hasta comprobarla.
+
+Los plugins de memoria de desarrollo instalados no integran la web. No se ha comprobado conectividad ni credenciales de la API. Esta PR documenta el diseño; no implementa llamadas.
+
+## Datos y confianza
+
+Los modelos y operaciones se definen en [el contrato](contracts.md). Cada dato público tiene procedencia y fecha de comprobación. Un valor ausente sigue siendo desconocido. El contacto público debe estar autorizado para publicación; los contactos privados viven en una tabla separada sin acceso desde el catálogo ni desde el agente.
+
+Una relación comunidad–venue significa que existe evidencia de un evento allí. Una recomendación del agente no crea esa relación. El tamaño de comunidad tampoco se deduce de los asistentes de un evento.
+
+El primer administrador aprueba manualmente a los organizadores iniciales. Un organizador puede avalar una solicitud de otro, pero el aval no concede permisos automáticamente. Las escrituras requieren aprobación vigente y permiso sobre la entidad concreta. Los clientes no pueden cambiar su propia aprobación ni sus asignaciones. Las ediciones usan una revisión esperada para detectar cambios simultáneos.
+
+RLS se aplica también al acceso directo a Supabase. Las vistas públicas deben respetar RLS y los privilegios de sus tablas. La API de descubrimiento no usa credenciales privilegiadas. Antes del despliegue se prueba la matriz de acceso, incluidas las llamadas que evitan la interfaz.
+
+Las URLs antiguas siguen siendo borradores compartidos; sus parámetros no prueban aprobación ni crean filas publicadas. Antes de introducir notas privadas, el editor debe advertir que el contenido de una URL se comparte con quien recibe el enlace.
+
+## Módulos propuestos
+
+Los archivos siguientes, salvo los del prototipo, todavía no existen:
+
+- `discover.html`, `discover.js`, `organiser.html`, `organiser.js`: interfaz nueva. El responsable de web es el único que modifica `app.js` y `styles.css`.
+- `api/`: entrada HTTP, consultas de catálogo, escritura autenticada y validación de contratos.
+- `agent/`: interpretación con Grok y selección de hechos. Indexación y recuperación del grafo de comentarios mediante Cognee. No escribe fichas ni envía mensajes.
+- `supabase/migrations/`: cambios versionados, permisos y proyecciones públicas.
+- `scripts/`: importación con procedencia.
+
+`data.js` sigue siendo la fuente del roster del escritorio existente hasta que su lectura se migre expresamente. Se importa conservando los IDs. Para el catálogo conectado, manda Supabase. Una futura exportación offline debe generarse desde la base; no se mantiene manualmente otra copia editable.
+
+## Decisión y alternativas
+
+Se compararon dos propuestas independientes: extender la web estática con API y Supabase, o servir toda la aplicación desde Node con SQLite. Elegimos la primera porque conserva el recorrido existente y aprovecha el sponsor confirmado. La segunda requería almacenamiento persistente y una migración posterior de datos.
+
+De la propuesta unificada tomamos revisiones de edición, operaciones idempotentes y distinción entre borrador y publicación. La revisión cruzada exigió aislar contactos privados y evitar que el modelo convierta una cita válida en una afirmación sin respaldo. Grok como agente de desarrollo estaba deshabilitado en el entorno; la comparación se hizo con Claude y Codex. Esto es independiente del acceso de la aplicación a los créditos de Grok.
+
+Aceptamos desplegar una API además de la web estática. Evitamos por ahora microservicios y varios canales de chat. Primero se demuestra el chat web. Grok API y Grok Bot no son la misma integración; el segundo depende del acceso del evento.
+
+## Eventos y siguientes entregas
+
+El calendario del track sigue dentro del alcance, después del recorrido de venues. Primera fuente propuesta: Luma. Después, Devpost, BuilderBase y Meetup, con adaptadores separados, caché, fecha de última sincronización y deduplicación por proveedor e ID externo. Los snippets del brief son puntos de partida pendientes de comprobar, no integraciones probadas.
+
+Se conservan ubicación, organizador y fuentes. El ranking muestra criterios y evidencia; no inventa calidad ni popularidad. Se etiquetan 30 eventos reales para evaluar el orden. El feed `.ics` usa UID estable, zona horaria y revisiones. Se compara con The Hack Collective si su calendario está disponible. Hack Radar requiere pedir acceso en la sala.
+
+WhatsApp o Discord se añaden después mediante la misma API. Zero aparece en el brief, pero no está en la lista de acceso confirmada. El seguimiento inicial de solicitudes puede vivir en Supabase. No se afirma ninguna integración con Zero.
+
+## Decisiones pendientes
+
+- Proyecto Supabase compartido, acceso del equipo y hosting de API.
+- Modelo Grok disponible y límites de los créditos.
+- Acceso al servicio Cognee, comentarios reales autorizados y evaluación de la recuperación del grafo.
+- Usuarios de GitHub para asignar los tres frentes. El repo es público; falta añadir una licencia abierta válida para la entrega.
+
+No se comparten claves por chat, commits ni parámetros de URL. Se configuran en los secretos del despliegue.
+
+## Referencias técnicas
+
+- [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security) y [PostGIS](https://supabase.com/docs/guides/database/extensions/postgis).
+- [Salidas estructuradas de Grok](https://docs.x.ai/developers/model-capabilities/text/structured-outputs).
+- [API de Cognee](https://docs.cognee.ai/api-reference/introduction).

@@ -1,0 +1,9 @@
+---
+description: Scope and checkout isolation for the three implementation contributors
+alwaysApply: true
+---
+
+Read root AGENTS.md, docs/team-plan.md and coordination/roles.json before edits.
+Declare your role, branch and checkout path. Use a separate checkout and branch per chat.
+Edit only your role's paths. Ask the owning contributor for cross-scope changes.
+Run scripts/check_scope.py as described in AGENTS.md before opening a PR.
