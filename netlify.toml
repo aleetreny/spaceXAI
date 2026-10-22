@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[dev]
+  command = "python3 -m http.server 4321"
+  port = 8888
+  targetPort = 4321
+  framework = "#static"
+  publish = "."

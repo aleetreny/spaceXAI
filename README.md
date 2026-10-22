@@ -14,6 +14,18 @@ Abre http://127.0.0.1:4321
 
 No hace falta Node. La página publicada es `event.html` con la pareja, la idea y las notas en la URL, así se puede enseñar sin backend.
 
+## Clave de Grok
+
+La key no va en el repo. `POST /api/grok` la lee en el servidor desde `XAI_API_KEY` (`netlify/functions/grok.ts`). La mesa no llama a ese endpoint: sigue publicando la página en local.
+
+```bash
+cp .env.example .env
+# pega la key en .env, en la línea XAI_API_KEY=
+npx netlify dev
+```
+
+En Netlify: Site configuration → Environment variables → `XAI_API_KEY`, marcada como secreto. `python3 -m http.server` no ejecuta la función.
+
 ## Demo de 3 minutos
 
 1. La sala ya está cargada: las comunidades y los leads del listado de Luma. Outpost × Hackradar viene marcado.
