@@ -1,6 +1,6 @@
 # Same Room / Night Office — Supabase + Cognee integration
 
-**Stage:** implementation + deterministic dry-run and mocked API tests verified. **NOT LIVE CONNECTED.** Actual Supabase project creation, schema migration, upload, Cognee `add/cognify`, and production search remain blocked until the owner confirms the target organization and privately configures provider credentials. Never treat dry-run/mock results as production connectivity.
+**Operational stage:** Supabase is **LIVE, LOADED, RLS-SECURED AND SQL-VERIFIED** in the owner's existing `spaceXAI` project. Cognee indexing and HTTP backend deployment are **NOT** yet verified. For current authoritative counts and example SQL, read [`STATUS.md`](STATUS.md); for agent instructions, read [`AGENTS.md`](AGENTS.md).
 
 ## Scope and source
 
@@ -10,12 +10,17 @@
 - Every complete venue source record preserved in `vi_venues.payload` JSONB. No live availability or verified geocodes.
 - Exact FKs: venues → buildings & optional operators; spaces → venue & building; evidence → venue; edges → polymorphic `vi_nodes` registry (both endpoints). Refuse dangling IDs.
 
-## Before provisioning Supabase
+## Existing Supabase project — already provisioned and populated
 
-1. Ask project owner which **Supabase organization** to use. In the connected account (at initial check), only `aleetreny's Org` (`xrgtbrrmaaiowrfhkqid`) and an existing unrelated `Finanzas` project were visible. **NEVER use Finanzas.** Re-read organizations/projects before creation because state may change.
-2. Call Supabase `get_cost` on the chosen organization for a **new project**, quote the actual cost, and get user approval for any nonzero charge. Create exactly `same-room` at $0 if possible; prefer `eu-west-2` only after owner agrees. Stop for payment approval.
-3. Inspect the new `same-room` project's public tables and policies *before* migrating. If `communities`/`events` exist, preserve them verbatim. If absent, do not fabricate existing data; their existing `supabase/schema.sql` is separately managed.
-4. Apply `supabase_vi_migration.sql` using a privileged migration pathway to **that exact project ref only**. Verify RLS, `GRANT SELECT` for anon/authenticated, and no public INSERT/UPDATE/DELETE on `vi_*` tables; ingestion state is private to service_role.
+**Do not create `same-room` or use `Finanzas`:** The owner explicitly selected the existing **spaceXAI** project in `aleetreny's Org`. Project ref: `lrjxjypjccoopejltwyz`; region: `eu-west-1`.
+
+- Dashboard: https://supabase.com/dashboard/project/lrjxjypjccoopejltwyz/editor
+- Preflight public-table count: 0; no `communities`/`events` existed. These root app tables have not been migrated here.
+- Applied namespaced migration: `venue_intelligence_v2_initial_rls` from `supabase_vi_migration.sql`. **Do not reapply on every app start.**
+- Live count: operators 23, buildings 337, venues 381, spaces 381, evidence 699, nodes 1821, unique edges 819. All 381 have full JSONB payload and no live booking flags. Orphan FK checks 0.
+- RLS: eight tables protected. Seven public research tables grant `anon`/`authenticated` SELECT only, no writes; `vi_cognee_sync` not public.
+- Verified read as `anon`; verified Ramen Space `venue_id` and evidence IDs/URLs (see `STATUS.md`).
+- Imported once using authorized Supabase SQL connector with upserts, **not by exchanging a service-role key**. External `supabase_import.py --execute` is a reproducible option for future server-only refreshes, *not* a prerequisite to this live snapshot. No agent should require owner to paste secrets in chat.
 
 ## Data import (server / trusted shell only)
 
@@ -65,7 +70,7 @@ Production expected counts:
 | `vi_nodes` | 1,821 |
 | `vi_edges` | 819 |
 
-The importer verifies all counts against the *live target* and fails if not exact. It never deletes other rows; because this is a fresh dedicated project, counts should match. An actual report must be produced before claiming load succeeded.
+The importer verifies all counts against the *live target* and fails if not exact. It never deletes other rows; this owner-owned project already has the exact expected counts. They were verified directly in the live database via the authorized SQL connector (see STATUS.md).
 
 ## Cognee ingestion — own separate dataset
 
@@ -105,14 +110,14 @@ The graph query endpoint only returns matches if Cognee retrieved actual IDs tha
 
 `venue_id=v_20788f6d9dad9722`: Ramen Space. An evening hire policy is described on its official site (generally weekdays 18:00–21:30, weekends 08:00–20:00); a venue-specific evidence entry is `e_fee8f5654104909f` (`research_lead_mentioned`), with URL `https://ramenclub.com/ramen-space/events/`. This particular evidence field attests listing discovery, *not* a date-specific slot: the separate venue text describes hours and must be confirmed with the operator. Laptop-work capacity is explicitly 50; theatre capacity 70 is a separate measure.
 
-### Verification gates before marking connected
+### Verification gates — current status
 
-1. Create project only after organization and $ cost confirmed.
-2. `list_tables`/SQL preflight and post-migration check RLS, privileges, FK constraints.
-3. Run importer `--execute` **twice** and verify stable live counts + evidence and `payload` JSONB.
-4. Run Cognee document ingestion; verify dataset processing status and a real `/api/v1/search` returning a `venue_id` and evidence identifier. If it doesn't, fix indexing/prompting instead of claiming success.
-5. Verify live GET detail and POST graph request through the deployed backend, including an `evidence_id` and original URL; record only **sanitized** example output in PR.
-6. Confirm `communities`/`events` unchanged, API RLS denies anon writes (test with disposable dummy ID), and no secrets reach browser/network source control.
+1. [x] Owner's existing `spaceXAI` project selected; no new project created or destroyed.
+2. [x] Live `vi_*` migration applied; 8 tables have RLS and grants/foreign keys verified.
+3. [x] Full static dataset loaded using upserts and SQL counts cross-checked against source, `payload` and FK audits passed. The standalone credentialed importer is not required to redo this now.
+4. [ ] Own Cognee instance, private credentials and budget; real `add`/`cognify` plus cited `search` check — **NOT YET DONE**.
+5. [ ] Configure publishable Supabase key in backend's private environment and deploy standalone venue API/UI; do real GET evidence and POST Cognee request via backend.
+6. [x] Existing team root app files and other products untouched. `communities` and `events` were absent on creation and remain a separate team step.
 
 ## Limitations
 
