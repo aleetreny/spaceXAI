@@ -30,7 +30,7 @@ Se acepta cuando dos organizadores aprobados guardan venues con fuentes y un ter
 
 ## Persona C: agente y memoria
 
-Rama propuesta: `feature/discovery-agent`. Archivos propios: `agent/`, evaluación del agente y exportación a Notion en `scripts/export-notion.*` si queda tiempo.
+Rama propuesta: `feature/discovery-agent`. Archivos propios: `agent/` y evaluación del agente.
 
 Prompt para su agente:
 
