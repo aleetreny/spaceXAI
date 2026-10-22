@@ -1,0 +1,38 @@
+﻿priority,source_name,source_url,source_class,discovery_potential,useful_fields,proposed_mode,rights_or_quality_risk,refresh_strategy
+Tier1,Ramen Space,https://ramenclub.com/ramen-space/events/,operator,High,hours/capacity/technical/booking,public page summary,"first-party, verify TOS",review weekly
+Tier1,Civo Tech Junction,https://www.civo.com/tech-junction,operator,High,price/special nonprofit pricing/AV/fibre,public page summary,"first-party, pricing varies conditions",review weekly
+Tier1,Plexal,https://www.plexal.com/event-hire/,operator,High,hackathon suitability/rooms/IT,public page summary,first-party terms,review weekly
+Tier1,Techspace,https://www.techspace.co/workspaces/events,operator,High,room names/capacity/addresses,public pages,first-party terms,review weekly
+Tier1,Huckletree,https://www.huckletree.com/hubs/hire-event-spaces/london,operator,High,operator rooms/capacities/evening,public listing,first-party terms; future rooms flag,review weekly
+Tier1,Second Home,https://secondhome.io/venues/,operator,High,rooms/capacities/evening tariffs,public pages,first-party terms,review weekly
+Tier1,x+why,https://www.xandwhy.co.uk/memberships-type/event-spaces,operator,High,price/room sizes/event rental,public pages,first-party terms,review weekly
+Tier1,The Trampery,https://thetrampery.com/spaces/venue-hire/,operator,High,room event hire/contact,public pages,first-party terms,review monthly
+Tier1,Impact Hub London,https://london.impacthub.net/event-space-in-london,operator,High,event rooms/net zero fit,public pages,first-party terms,review monthly
+Tier1,SPACE4,https://space4.tech/hosting/,operator,High,community events/hosting,public page,first-party terms,review monthly
+Tier1,UCL,https://www.ucl.ac.uk/estates/ucl-venues/conference-and-venue-hire,university,High,lecture theatre/training room,public page,room-by-room weekend unknown,review monthly
+Tier1,LSE,https://info.lse.ac.uk/staff/divisions/estates-division/room-booking-venue-hire/Secure/hire-conference-facilities,university,High,teaching room capacity/out-of-hours,public page,conditions apply,review monthly
+Tier1,Imperial Venues,https://www.imperialvenues.co.uk/events/location/,university,High,campus/lecture room hire,public pages,room-by-room policy,review monthly
+Tier1,Kings Venues,https://www.kcl.ac.uk/kingsvenues/locations/kings-venues-at-london-bridge/venue-hire,university,High,room hire,public page,manual access confirmation,review monthly
+Tier1,University of London Senate House,https://www.london.ac.uk/about/services/conference-event-hire,university,High,rooms/capacity/pricing,public page,terms per room,review monthly
+Tier1,EFI Group,https://www.efigroup.ac.uk/venue-hire,college,High,18:00-21:00/9:00-21:00/capacity,public page,date-level unknown,review weekly
+Tier1,Schoolhire,https://schoolhire.co.uk/,school marketplace,Medium-high,school halls/classroom detail,index as leads only,do not bulk copy without licence,contact for partnership
+Tier2,Tower Hamlets council,https://www.towerhamlets.gov.uk/lgnl/community_and_living/halls_for_hire/halls_for_hire.aspx,borough,High,90+ local venue candidates,public borough listing,verify specific first-party pages,review monthly
+Tier2,Hackney Community Halls,https://communityhalls.hackney.gov.uk/venues,borough,High,40 named venues,public booking directory,JS/robots may obstruct,review weekly
+Tier2,Lambeth Bookings,https://hire.lambeth.gov.uk/venues,borough,High,20 venues/multiple rooms,public booking directory,pagination; automation permission check,review weekly
+Tier2,Brent space hire,https://spacehire.brent.gov.uk/spaces,borough,High,room prices/addresses/capacity,public booking listing,pagination and ToS,review weekly
+Tier2,Haringey community centres,https://haringey.gov.uk/housing/housing-resident-engagement/community-centres,borough,Medium,centres and sizes,official council list,may miss independent spaces,review monthly
+Tier2,Southwark leisure and venue bookings,https://services.southwark.gov.uk/leisure-facility-hire-and-bookings,borough,High,public facilities/rooms/prices,council directory,check room technical suitability,review monthly
+Tier2,Camden Libraries,https://www.camden.gov.uk/events-in-libraries,borough,Medium,library off-hours booking,official site,not all sites or dates,review monthly
+Tier2,Tower Hamlets arts and event spaces,https://www.towerhamlets.gov.uk/lgnl/community_and_living/voluntary-and-community-sector/Premises/halls-and-venues-for-hire.aspx,borough,Medium,council-community spaces,public index,site differs from primary council listing,review quarterly
+Tier3,GLA Cultural Infrastructure 2025-2026,https://data.london.gov.uk/dataset/cultural-infrastructure-data-2025-and-2026-2rj5o,government batch dataset,Very high,venue names/categories/address/lat long/website,obtain XLSX after licence review,OS/third-party and reuse terms unclear,one-off updates
+Tier3,GLA old 2019 cultural map,https://www.data.gov.uk/dataset/c6e5ff4d-806f-406e-99d2-273263a0eb7a/cultural-infrastructure-map2,government batch dataset,High,community centres/libraries/makerspaces,historical comparison only,outdated/third-party terms,one-off snapshot
+Tier3,OpenStreetMap Overpass,https://overpass-api.de/,open geo dataset,Very high,"POI, geocoordinates, tags, address",store in separate ODbL layer,attribution and potential share-alike,monthly with self-hosted extracts
+Tier3,Geofabrik London/England extracts,https://download.geofabrik.de/europe/united-kingdom/england.html,open geo extract,Very high,bulk OSM POIs locally,local geospatial pipeline,OSM ODbL,monthly
+Tier3,Companies House,https://developer.company-information.service.gov.uk/,government companies,High,operators and companies,find prospect operators,entity address not physical venue,quarterly
+Tier3,TfL Unified API,https://api.tfl.gov.uk/,government mobility API,High,station distances/transport accessibility,downstream feature enrichment,API terms/quotas,monthly
+Partner,Tagvenue,https://www.tagvenue.com/,event marketplace,Very high,commercial venue characteristics,licensed partnership,do not bulk scrape listings,contact BD
+Partner,Hire Space,https://hirespace.com/,event marketplace,Very high,commercial venues/pricing,licensed data acquisition,do not clone directory,contact BD
+Partner,VenueScanner,https://www.venuescanner.com/,event marketplace,Very high,venues capacities prices,licensed integration,do not clone directory,contact BD
+Partner,HeadBox,https://www.headbox.com/,event marketplace,Very high,event space coverage,licensed partnership,do not clone directory,contact BD
+Partner,Peerspace,https://www.peerspace.com/,event marketplace,High,hourly event studio inventory,licence/partnership,do not clone content,contact BD
+Restricted,Google Places API,https://developers.google.com/maps/documentation/places/web-service/policies,commercial geodata,Very high,Place ID and interactive place data,only per API use rights,no persistent Google-sourced directory scraping,never bulk scrape

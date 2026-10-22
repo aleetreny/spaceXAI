@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+import_report.json
+*.key
+*.pem
+__pycache__/
+*.pyc
+node_modules/
+.local_state/
