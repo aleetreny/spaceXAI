@@ -25,24 +25,39 @@ Se conserva la web estática y se añaden páginas de descubrimiento y edición,
 - Web propia: catálogo, filtros, chat público, fichas, fuentes y formulario de organizador. Las fichas y páginas compartibles se consultan en esta web.
 - Supabase: datos canónicos, autenticación, permisos por fila y búsquedas geográficas con PostGIS.
 - Grok: interpreta la consulta y selecciona identificadores sobre resultados autorizados. Las claves permanecen en el servidor.
+- Cognee: construye y consulta el grafo derivado de comentarios reales sobre venues y comunidades, con referencias a la evidencia original.
 
 Grok usa herramientas de lectura como `searchVenues`, `searchCommunities` y `getPublicFacts`. La API valida filtros, límites, identificadores y revisiones. Las tarjetas muestran datos de la base, no afirmaciones factuales redactadas libremente por el modelo. Una cita válida por sí sola no demuestra que una frase sea verdadera.
 
 Supabase también resuelve quién organizó cada evento y en qué espacio, mediante relaciones y procedencia. Este historial y sus citas no requieren Cognee. Si falla Grok, queda disponible la búsqueda por filtros, identificada como tal.
 
-## Cognee como ampliación opcional
+## Cognee como grafo de comentarios
 
-Cognee queda fuera de las dependencias del MVP. Las fichas actuales son breves y estructuradas; todavía no se ha demostrado un caso que necesite recuperación sobre textos desordenados.
+Cognee forma parte del diseño para buscar referencias cualitativas sobre venues y comunidades. Supabase guarda comentarios originales, permisos y revisiones; Cognee construye un grafo derivado para recuperar experiencias relacionadas. Grok consulta ese grafo mediante una herramienta controlada del servidor.
 
-Una ampliación acotada sería "Qué conviene preguntar antes de reservar". Después de buscar venues, recuperaría fragmentos de descripciones y notas reales de organizadores para sugerir preguntas específicas. Cada fragmento conservaría texto original, autor o procedencia, fecha y permiso de publicación en Supabase. Una experiencia pasada no se convertiría automáticamente en una característica permanente, precio o disponibilidad.
+El grafo conecta venues y comunidades con comentarios, aspectos mencionados y el contexto de la experiencia. Los aspectos iniciales son ruido, accesibilidad, equipamiento y tipo de actividad. Cada relación extraída conserva el ID del comentario, revisión, fragmento exacto y fecha. Se distingue lo que afirma el autor de la interpretación de la extracción. La autoría pública solo se muestra con permiso; no se crean perfiles de personas en el grafo del MVP.
 
-Solo se incorpora después de completar la demo principal, disponer de textos reales autorizados y comparar unas cinco consultas con Grok leyendo esos mismos textos directamente. Debe mostrar una mejora visible al recuperar evidencia pertinente. Con pocos documentos, la lectura directa puede bastar.
+Ejemplo de consulta, no testimonio ni dato para sembrar: "Quiero un venue muy silencioso para una charla". El flujo propuesto es:
 
-Estimación de esfuerzo adicional, no medición: 30–60 minutos para verificar acceso y probar recuperación; 4–8 horas-persona en total para una integración acotada, suponiendo catálogo y API operativos y un servicio Cognee accesible. Incluye ingestión, recuperación, bloque web, validación de fuentes y pruebas de fallo. Un despliegue propio quedaría fuera del alcance de esta hackathon. El coste monetario depende del plan, los créditos y el procesamiento; no está verificado.
+1. Grok separa requisitos estructurados y preferencia acústica. Supabase filtra ubicación, capacidad y condiciones conocidas.
+2. Grok llama a `searchCommentEvidence` con los candidatos y el aspecto ruido. Si no hay filtros estructurados, la herramienta puede recuperar candidatos del grafo y validarlos después contra el catálogo público.
+3. Cognee recupera el subgrafo pertinente y las referencias a comentarios. El servidor verifica que cada fuente siga publicada, autorizada y en su revisión vigente. Si no puede reconstruir la evidencia original, descarta la relación.
+4. La web presenta el venue y las referencias favorables y contradictorias, con fragmento, fecha y contexto del evento cuando se conoce. Un control "Ver referencias" permite inspeccionar el subgrafo acotado devuelto, sin exponer el grafo completo.
+5. Grok explica la recomendación como experiencia reportada. No garantiza silencio ni deduce disponibilidad o precio. Sin comentarios pertinentes indica "sin referencias sobre ruido"; eso no significa que el venue sea ruidoso.
 
-Si se incorpora, Cognee devuelve contexto e identificadores de documentos. El servidor verifica revisión, visibilidad y respaldo del fragmento en Supabase antes de mostrarlo. La memoria se invalida al retirar o modificar una fuente. No decide permisos, precio ni disponibilidad. Si falla, se omite el bloque y funciona la búsqueda principal. No se envían contactos privados ni conversaciones sin autorización.
+El mismo mecanismo sirve para buscar comunidades por experiencias descritas, por ejemplo actividades para principiantes, siempre con evidencia real. Una preferencia subjetiva influye en el orden de recomendaciones, pero no altera los campos confirmados del catálogo. Las contradicciones y el contexto temporal permanecen visibles. El subgrafo se entrega como nodos y relaciones con fuentes; la representación visual puede añadirse después de las tarjetas de evidencia.
 
-Los plugins de memoria de desarrollo instalados no integran la web. No se ha comprobado conectividad ni credenciales de la API. El MVP no requiere configurarlas.
+Solo se indexan comentarios reales publicados por organizadores aprobados, o importados con permiso y procedencia comprobable. La primera versión no ingiere chats privados ni genera reseñas. Un organizador aprobado puede aportar comentarios sobre entidades ajenas, identificados como su experiencia; eso no le concede permiso para modificar sus fichas. La moderación decide su publicación.
+
+La actualización del grafo ocurre fuera de la petición de búsqueda, con trabajos idempotentes por comentario y revisión. La API excluye de inmediato comentarios retirados o versiones antiguas, aunque la limpieza de Cognee siga pendiente. La memoria es reconstruible desde Supabase y nunca decide permisos. Los textos se tratan como datos, no como instrucciones para Grok.
+
+Cognee se incluye en el alcance de producto, pero su fallo no bloquea el catálogo. Si tarda o falla, se devuelven los resultados estructurados con el aviso "referencias de comentarios temporalmente no disponibles". No se inventan resultados ni se afirma haber consultado el grafo.
+
+Estimación de esfuerzo adicional, no medición: 6–10 horas-persona para comentarios y moderación básicos, indexación, recuperación de un subgrafo acotado, tarjetas de evidencia y pruebas de actualización, contradicciones y fallo. Supone catálogo y API operativos y un servicio Cognee accesible; verificar acceso puede llevar 30–60 minutos iniciales. Un visor interactivo completo del grafo y un despliegue propio quedan fuera de esta estimación. El coste monetario depende del plan y procesamiento, todavía sin verificar.
+
+La demo requiere comentarios reales sobre venues y comunidades. Se prueba una consulta cualitativa, una contradicción, ausencia de referencias y caída de Cognee. Se compara también con Grok leyendo los mismos comentarios para evaluar calidad, sin presentar una mejora como medida hasta comprobarla.
+
+Los plugins de memoria de desarrollo instalados no integran la web. No se ha comprobado conectividad ni credenciales de la API. Esta PR documenta el diseño; no implementa llamadas.
 
 ## Datos y confianza
 
@@ -62,7 +77,7 @@ Los archivos siguientes, salvo los del prototipo, todavía no existen:
 
 - `discover.html`, `discover.js`, `organiser.html`, `organiser.js`: interfaz nueva. El responsable de web es el único que modifica `app.js` y `styles.css`.
 - `api/`: entrada HTTP, consultas de catálogo, escritura autenticada y validación de contratos.
-- `agent/`: interpretación con Grok y selección de hechos. Recuperación desde Cognee solo si se acepta la ampliación opcional. No escribe fichas ni envía mensajes.
+- `agent/`: interpretación con Grok y selección de hechos. Indexación y recuperación del grafo de comentarios mediante Cognee. No escribe fichas ni envía mensajes.
 - `supabase/migrations/`: cambios versionados, permisos y proyecciones públicas.
 - `scripts/`: importación con procedencia.
 
@@ -88,7 +103,7 @@ WhatsApp o Discord se añaden después mediante la misma API. Zero aparece en el
 
 - Proyecto Supabase compartido, acceso del equipo y hosting de API.
 - Modelo Grok disponible y límites de los créditos.
-- Si se aborda la ampliación de Cognee: acceso al servicio, textos autorizados y evaluación comparativa.
+- Acceso al servicio Cognee, comentarios reales autorizados y evaluación de la recuperación del grafo.
 - Usuarios de GitHub para asignar los tres frentes. El repo es público; falta añadir una licencia abierta válida para la entrega.
 
 No se comparten claves por chat, commits ni parámetros de URL. Se configuran en los secretos del despliegue.

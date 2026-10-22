@@ -16,7 +16,7 @@ Prompt para su agente:
 
 > Lee AGENTS.md y docs/. Implementa el catálogo público, el chat web y la edición de fichas según contracts.md. Conserva el recorrido de dos comunidades a página compartible. Usa solo datos con fuente; muestra estados vacíos y errores de conexión. Si usas respuestas de prueba, no las presentes como datos reales. Separa disponibilidad confirmada de horarios y precio desconocido de gratis. No añadas claves al cliente. Coordina cualquier cambio de contrato mediante la PR. No cambies SQL ni la implementación del agente.
 
-Se acepta cuando un visitante busca, abre fuentes y llega al borrador; un organizador ve sus formularios autorizados. En móvil se puede completar el recorrido. El escritorio original y su aviso de horario siguen funcionando.
+Se acepta cuando un visitante busca, abre fuentes y llega al borrador; un organizador ve sus formularios autorizados. La web permite aportar comentarios y muestra fragmentos, fechas, contradicciones y referencias del subgrafo recuperado, con estados sin evidencia o servicio no disponible. En móvil se puede completar el recorrido. El escritorio original y su aviso de horario siguen funcionando.
 
 ## Persona B: base de datos, permisos y API
 
@@ -24,7 +24,7 @@ Rama propuesta: `feature/catalog-data`. Archivos propios: `supabase/`, `api/`, i
 
 Prompt para su agente:
 
-> Lee AGENTS.md y docs/. Implementa el contrato sobre Supabase con datos reales, PostGIS y autorización por entidad. Conserva los IDs de comunidades. Reemplaza la política de escritura anónima antes de habilitar la base. Aísla los contactos privados de la proyección pública y del agente. Implementa revisiones de edición y creación idempotente. Entrega pruebas de acceso directo para visitante, usuario pendiente, editor propio, editor ajeno y administrador. Documenta cómo arrancar y desplegar la API. No cambies la UI ni agent/.
+> Lee AGENTS.md y docs/. Implementa el contrato sobre Supabase con datos reales, PostGIS y autorización por entidad. Conserva los IDs de comunidades. Reemplaza la política de escritura anónima antes de habilitar la base. Aísla los contactos privados de la proyección pública y del agente. Implementa comentarios con autoría, permiso de publicación y moderación, además de revisiones de edición, creación idempotente y trabajos de indexación por comentario y revisión. Entrega pruebas de acceso directo para visitante, usuario pendiente, editor propio, editor ajeno y administrador. Documenta cómo arrancar y desplegar la API. No cambies la UI ni agent/.
 
 Se acepta cuando dos organizadores aprobados guardan venues con fuentes y un tercero los consulta. Las llamadas directas no permiten autoaprobarse, editar entidades ajenas ni obtener contactos privados. Repetir una importación o publicación no duplica registros.
 
@@ -34,11 +34,11 @@ Rama propuesta: `feature/discovery-agent`. Archivos propios: `agent/` y evaluaci
 
 Prompt para su agente:
 
-> Lee AGENTS.md y docs/. Implementa un servicio invocable por api/ que interprete consultas con Grok y consulte el catálogo público y sus relaciones en Supabase. Devuelve el contrato de DiscoveryResult y valida IDs, revisiones y visibilidad. El MVP no depende de Cognee. No permitas que el modelo escriba fichas, conceda permisos, reserve o envíe mensajes. Las razones factuales salen de campos canónicos y plantillas. Prueba consultas sin resultados, fechas ambiguas, precio desconocido, disponibilidad ausente y caídas de proveedor. Sin proveedor, devuelve búsqueda por filtros identificada. No cambies la UI ni las políticas SQL.
+> Lee AGENTS.md y docs/. Implementa un servicio invocable por api/ que interprete consultas con Grok y consulte el catálogo público y sus relaciones en Supabase. Devuelve el contrato de DiscoveryResult y valida IDs, revisiones y visibilidad. Integra Cognee como grafo de comentarios sobre venues y comunidades mediante searchCommentEvidence. Indexa solo comentarios publicados y devuelve un subgrafo acotado con fragmentos originales y revisiones verificadas en Supabase. Conserva evidencia contradictoria y separa experiencias subjetivas de los datos confirmados. Si falla Cognee, conserva la búsqueda estructurada y declara que las referencias no están disponibles. No permitas que el modelo escriba fichas, conceda permisos, reserve o envíe mensajes. Las razones factuales salen de campos canónicos y plantillas. Prueba consultas sin resultados, fechas ambiguas, precio desconocido, disponibilidad ausente y caídas de proveedor. Sin proveedor, devuelve búsqueda por filtros identificada. No cambies la UI ni las políticas SQL.
 
 Se acepta cuando consultas de venues y comunidades devuelven entidades reales y fuentes. Una instrucción maliciosa en una ficha no cambia permisos ni activa herramientas no autorizadas. El contexto enviado a Grok excluye contactos privados. Las bajas y revisiones se respetan en cada consulta.
 
-Después de la demo principal, esta persona puede evaluar la ampliación de Cognee descrita en architecture.md. Primero necesita textos reales autorizados y una comparación con Grok leyendo esos mismos textos. La integración solo se aborda si demuestra valor y cabe en el tiempo restante; no bloquea la entrega.
+Esta persona entrega el grafo de comentarios descrito en architecture.md con textos reales autorizados. Prueba búsqueda por ruido en venues y por actividades en comunidades, evidencia contradictoria, ausencia de comentarios, modificación y retirada de fuentes, y caída del servicio. Compara la recuperación con Grok leyendo esos mismos textos. El catálogo debe funcionar aunque el grafo esté indisponible.
 
 ## Integración y revisión
 
@@ -56,6 +56,8 @@ Los agentes no editan la misma rama ni comparten archivos de secretos. Cada PR d
 - Consulta pública que devuelve esas fichas con condiciones por confirmar.
 - Rechazo de escritura sin aprobación y de edición ajena, también por acceso directo.
 - Respuesta del agente sin entidades ni hechos inventados; fuente visible en cada tarjeta.
+- Comentarios reales de venues y comunidades recuperados a través de Cognee, con subgrafo y fragmentos comprobables.
+- Retirada de un comentario que impide recuperar su evidencia, y búsqueda estructurada operativa con Cognee caído.
 - Captura de un contexto del modelo que no contiene contactos privados.
 - Recorrido original de comunidades a página compartible conservado.
 - Para la entrega completa del track: importación viva, ranking explicado y suscripción `.ics` comprobada.

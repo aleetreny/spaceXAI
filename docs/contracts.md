@@ -41,7 +41,9 @@ Community = { id, name, audience?, size?, activities?, publicContactUrl?,
 HostedAt = { communityId, venueId, eventId?, sourceId }
 Match = { entityId, kind, factIds[], reasonCodes[], unknownFields[], revision }
 DiscoveryResult = { mode: agent|filters, matches[], sources[], nextCursor?,
-                    clarification?, warnings[] }
+                    clarification?, warnings[],
+                    evidenceStatus: available|no_evidence|not_requested|unavailable,
+                    evidenceGraph? }
 ```
 
 Cada campo factual publicado debe poder enlazarse con un `Fact` y su fuente. Un campo sin fuente queda ausente. Los contactos privados no forman parte de estos objetos. Las cantidades no se extraen de textos que describen otra métrica.
@@ -58,7 +60,39 @@ Los nombres son propuestas para la primera migración, no tablas ya creadas. `co
 
 La ingestión identifica registros por `(provider, external_id)` y conserva la procedencia. Una repetición actualiza el registro en vez de duplicarlo. El MVP consulta el historial mediante relaciones en Supabase, sin depender de Cognee.
 
-La ampliación opcional de contexto documental requiere un contrato separado antes de implementarse. Debe incluir ID y revisión del documento, fragmento original, procedencia, fecha y permiso de publicación. El servidor verifica la evidencia vigente en Supabase. No se añaden inferencias a los campos confirmados del catálogo.
+## Contrato del grafo de comentarios
+
+Operaciones autenticadas propuestas:
+
+```text
+POST /api/comments { entityId, body, sourceId, experiencedAt?, operationId }
+PATCH /api/comments/:id { body, expectedRevision }
+POST /api/comments/:id/moderation { decision, expectedRevision }
+```
+
+Un organizador aprobado aporta y edita sus comentarios; no puede hacerse pasar por otro autor ni publicar o moderar por su cuenta. El moderador autoriza publicación o retirada. Un comentario puede referirse a un venue o comunidad ajena sin conceder permisos de edición sobre su ficha. La indexación solo consume comentarios publicados y autorizados para uso público.
+
+Contrato conceptual de lectura e indexación, no funciones ya implementadas:
+
+```text
+Comment = { id, entityId, body, sourceId, experiencedAt?, createdAt,
+            publicationStatus: pending|published|withdrawn, revision }
+EvidenceReference = { commentId, revision, sourceId, excerpt, experiencedAt? }
+EvidenceNode = { id, kind: venue|community|comment|aspect, label }
+EvidenceEdge = { from, to, relation: about|mentions,
+                 interpretation?: favorable|unfavorable|mixed|unclear,
+                 references[] }
+EvidenceGraph = { nodes[], edges[] }
+searchCommentEvidence({ candidateIds?, entityKind, aspect, query, limit })
+  -> { status: available|no_evidence|unavailable, graph: EvidenceGraph }
+indexPublishedComment(commentId, revision) -> processing|indexed|failed
+```
+
+`evidenceStatus` informa si la búsqueda se realizó, no tuvo evidencia, no se solicitó o falló. `evidenceGraph` solo contiene nodos y relaciones autorizados para la consulta. Las interpretaciones extraídas se muestran como tales, no como hechos confirmados ni como una medida objetiva de silencio.
+
+Supabase añade `comments` y trabajos de indexación al modelo propuesto. Guarda autoría y moderación fuera de la proyección pública del agente; la autoría solo se expone con permiso. La identidad para idempotencia del trabajo es comentario y revisión. Cada fragmento debe existir en el original vigente y respaldar la relación mostrada. Si no se puede comprobar, se descarta. La API aplica visibilidad y revisión antes de devolver cualquier nodo o relación, incluidos los conectados indirectamente. Las relaciones sin evidencia válida se excluyen.
+
+Los comentarios contradictorios conservan sus referencias, fechas y contexto. `no_evidence` no se convierte en una valoración negativa. El grafo no cambia capacidad, precio, disponibilidad ni permisos. Al retirar un comentario se bloquea inmediatamente su recuperación pública y se programa la limpieza del grafo.
 
 ## Matriz mínima de acceso
 
