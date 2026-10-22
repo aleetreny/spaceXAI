@@ -3,8 +3,9 @@
  * Today it answers from mock data. To connect the API, replace each function
  * body with a fetch to the matching route and keep the return shape.
  *
- * Communities are real (data.js, with sources). Venues and comments are
- * examples: they are labelled as such and must not be read as facts.
+ * Communities are real (data.js, with sources). Events are real, imported
+ * from public Luma feeds into luma.js. Venues and comments are examples:
+ * they are labelled as such and must not be read as facts.
  *
  * Add ?fail=grok or ?fail=cognee to any page to see the degraded states.
  */
@@ -104,6 +105,39 @@
     },
   ];
 
+  const luma = window.SAME_ROOM_LUMA || { calendars: [], events: [], notFound: [] };
+  const lumaChecked = luma.fetchedAt ? luma.fetchedAt.slice(0, 10) : null;
+  const today = new Date().toISOString().slice(0, 10);
+
+  function calendarFor(communityId) {
+    return luma.calendars.find(function (c) { return c.communityId === communityId; }) || null;
+  }
+
+  const events = luma.events.map(function (e) {
+    const calendars = luma.calendars.filter(function (c) { return e.calendarIds.indexOf(c.id) !== -1; });
+    return {
+      id: e.id,
+      kind: "event",
+      example: false,
+      name: e.title,
+      startsAt: e.startsAt,
+      endsAt: e.endsAt,
+      allDay: e.allDay,
+      upcoming: e.startsAt.slice(0, 10) >= today,
+      location: e.location,
+      addressHidden: e.addressHidden,
+      hosts: e.hosts,
+      url: e.url,
+      calendars: calendars,
+      communityIds: calendars.map(function (c) { return c.communityId; }).filter(Boolean),
+      sources: [{ id: e.id + "-luma", label: "Luma event page", url: e.url, checkedAt: lumaChecked }],
+    };
+  });
+
+  function eventsOf(communityId) {
+    return events.filter(function (e) { return e.communityIds.indexOf(communityId) !== -1; });
+  }
+
   const communities = room.communities.map(function (c) {
     return {
       id: c.id,
@@ -114,10 +148,13 @@
       audience: c.focus,
       tags: c.tags,
       sources: [{ id: c.id + "-source", label: c.source, url: c.url || null, checkedAt: checked }],
+      luma: calendarFor(c.id),
+      lumaSearched: luma.notFound.indexOf(c.id) !== -1,
     };
   });
 
-  const all = venues.concat(communities);
+  // Past events stay reachable by id; search only lists upcoming ones.
+  const all = communities.concat(venues, events);
 
   function wait(value) {
     return new Promise(function (resolve) {
@@ -126,7 +163,9 @@
   }
 
   function text(entity) {
-    return [entity.name, entity.area, entity.audience, (entity.tags || []).join(" "), (entity.leads || []).join(" ")]
+    return [entity.name, entity.area, entity.audience, entity.location,
+      (entity.tags || []).join(" "), (entity.leads || []).join(" "), (entity.hosts || []).join(" "),
+      (entity.calendars || []).map(function (c) { return c.name; }).join(" ")]
       .filter(Boolean).join(" ").toLowerCase();
   }
 
@@ -148,13 +187,18 @@
     const kind = params.kind || "all";
     const minCapacity = Number(params.minCapacity) || 0;
     const freeOnly = Boolean(params.freeOnly);
-    const words = q.split(/\s+/).filter(function (w) { return w.length > 2; });
+    const words = q.split(/\s+/).filter(function (w) { return w.length > 1; }).map(function (w) {
+      return new RegExp("\\b" + w.replace(/[^a-z0-9]/g, "").replace(/s$/, ""), "i");
+    });
 
     const matches = [];
     const toConfirm = [];
     all.forEach(function (e) {
       if (kind !== "all" && e.kind !== kind) return;
-      if (words.length && !words.some(function (w) { return text(e).indexOf(w) !== -1; })) return;
+      if (e.kind === "event" && !e.upcoming) return;
+      // Events have their own tab; "All" without words would be only events.
+      if (e.kind === "event" && kind === "all" && !words.length) return;
+      if (words.length && !words.some(function (w) { return w.test(text(e)); })) return;
       const reasons = [];
       const unknown = [];
       if (e.kind === "venue") {
@@ -181,6 +225,7 @@
   window.SameRoomAPI = {
     status: {
       mock: true,
+      luma: luma.fetchedAt ? "imported " + lumaChecked : "not imported",
       supabase: "not connected",
       grok: fail === "grok" ? "down (simulated)" : "not connected",
       cognee: fail === "cognee" ? "down (simulated)" : "not connected",
@@ -204,8 +249,10 @@
       const lower = String(message || "").toLowerCase();
       const capacity = (lower.match(/(\d{2,4})\s*(people|personas|pax|guests)?/) || [])[1];
       const params = {
-        q: "",
-        kind: /community|comunidad/.test(lower) ? "community" : /venue|space|espacio|room|sala/.test(lower) ? "venue" : "all",
+        q: (lower.match(/\b(ai|agents?|founders?|students?|grok|cursor|crypto|design|hackathons?|meetups?|london)\b/g) || []).join(" "),
+        kind: /communit|comunidad/.test(lower) ? "community"
+          : /venue|space|espacio|room|sala/.test(lower) ? "venue"
+          : /event|hackathon|meetup|evento/.test(lower) ? "event" : "all",
         minCapacity: capacity ? Number(capacity) : 0,
         freeOnly: /free|gratis/.test(lower),
       };
@@ -236,11 +283,22 @@
       });
     },
 
+    upcomingEvents: function (limit) {
+      return wait(events.filter(function (e) { return e.upcoming; }).slice(0, limit || 6));
+    },
+
     getEntity: function (id) {
       const entity = byId(id);
       if (!entity) return wait(null);
       const evidence = entity.kind === "venue" ? evidenceFor([id], null) : { status: "not_requested", graph: null };
-      return wait({ entity: entity, evidenceStatus: evidence.status, evidenceGraph: evidence.graph });
+      const related = entity.kind === "community" ? eventsOf(id) : [];
+      return wait({
+        entity: entity,
+        evidenceStatus: evidence.status,
+        evidenceGraph: evidence.graph,
+        upcomingEvents: related.filter(function (e) { return e.upcoming; }),
+        pastEventCount: related.filter(function (e) { return !e.upcoming; }).length,
+      });
     },
 
     // Mock of POST /api/request-drafts. Returns text only; nothing is sent.

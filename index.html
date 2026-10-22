@@ -37,7 +37,7 @@
             placeholder="A quiet space for 80 people, free, next Thursday" />
           <button type="submit">Ask</button>
         </form>
-        <p class="hint">Try: “communities for students” · “venue for 100 people”</p>
+        <p class="hint">Try: “hackathons in london” · “communities for students” · “venue for 100 people”</p>
         <p class="freeze">
           Code freeze on the Luma page is 21:50. UK Hackathons lists 21:15. Confirm which one the room is using.
         </p>
@@ -62,6 +62,12 @@
       </section>
 
       <section class="band">
+        <h2 class="label">Next on Luma</h2>
+        <div class="cards" id="next-events"></div>
+        <p class="hint"><a href="discover.html?kind=event">All upcoming events</a> from the public calendars of tonight's communities.</p>
+      </section>
+
+      <section class="band">
         <h2 class="label">Communities in the room tonight</h2>
         <div class="pills" id="communities"></div>
       </section>
@@ -80,6 +86,7 @@
       </p>
     </footer>
     <script src="data.js"></script>
+    <script src="luma.js"></script>
     <script src="assets/portal-api.js"></script>
     <script src="assets/portal.js"></script>
   </body>

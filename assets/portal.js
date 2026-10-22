@@ -36,6 +36,21 @@
     return pricingLabels[pricing.type] || "Price to confirm";
   }
 
+  function when(event) {
+    if (event.allDay) {
+      const day = function (d) {
+        return new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+      };
+      // iCal all-day end dates are exclusive: the last day is the one before.
+      const last = event.endsAt && new Date(Date.parse(event.endsAt + "T12:00:00Z") - 864e5).toISOString().slice(0, 10);
+      return last && last > event.startsAt ? day(event.startsAt) + " – " + day(last) : day(event.startsAt);
+    }
+    return new Date(event.startsAt).toLocaleString("en-GB", {
+      weekday: "short", day: "numeric", month: "short", year: "numeric",
+      hour: "2-digit", minute: "2-digit", timeZone: "Europe/London",
+    }) + " London time";
+  }
+
   function exampleTag(entity) {
     return entity.example ? el("span", { class: "tag tag-example" }, "Example") : null;
   }
@@ -68,7 +83,7 @@
     const banner = api && api.status.mock
       ? el("p", { class: "mock-banner" }, [
           el("strong", null, "Mockup. "),
-          "Venues and comments are examples. Communities are real, with sources. Supabase, Grok and Cognee are not connected yet.",
+          "Venues and comments are examples. Communities and Luma events are real, with sources. Supabase, Grok and Cognee are not connected yet.",
         ])
       : null;
     document.body.prepend(header, banner || "");
@@ -79,6 +94,7 @@
     clear: clear,
     param: param,
     pricingLabel: pricingLabel,
+    when: when,
     exampleTag: exampleTag,
     sourceChip: sourceChip,
     shell: shell,
@@ -94,15 +110,27 @@
       strip.append(el("a", { class: "pill", href: "discover.html?id=" + c.id }, c.name));
     });
     const status = document.querySelector("#status");
+    const next = document.querySelector("#next-events");
+    api.upcomingEvents(6).then(function (events) {
+      events.forEach(function (e) {
+        next.append(el("a", { class: "card", href: "discover.html?id=" + e.id }, [
+          el("p", { class: "card-k" }, when(e)),
+          el("strong", { class: "card-title" }, e.name),
+          el("p", { class: "card-body" }, e.location || "Address shown to registered guests"),
+          el("p", { class: "card-source" }, "Luma · " + e.calendars.map(function (c) { return c.name; }).join(", ")),
+        ]));
+      });
+    });
     [
       ["Communities", "data.js, with a source per card", "live"],
+      ["Events", "public Luma calendars, luma.js", api.status.luma],
       ["Venues", "Supabase", api.status.supabase],
       ["Natural-language search", "Grok via /api/ask", api.status.grok],
       ["Comment references", "Cognee graph", api.status.cognee],
     ].forEach(function (row) {
       status.append(el("li", null, [
         el("span", null, [el("strong", null, row[0]), " · ", row[1]]),
-        el("span", { class: row[2] === "live" ? "state live" : "state" }, row[2]),
+        el("span", { class: /^(live|imported)/.test(row[2]) ? "state live" : "state" }, row[2]),
       ]));
     });
   }

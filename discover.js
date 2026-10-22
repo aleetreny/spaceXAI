@@ -35,7 +35,7 @@
     ]);
 
     const examples = el("p", { class: "hint" }, ["Try: "].concat(
-      ["quiet venue for 60 people", "free space for 100", "communities for students"].map(function (q, i) {
+      ["hackathons in london", "quiet venue for 60 people", "communities for students"].map(function (q, i) {
         return [i ? " · " : "", el("button", { type: "button", class: "linklike", onclick: function () {
           input.value = q;
           state.ask = q;
@@ -45,7 +45,7 @@
     ));
 
     const tabs = el("div", { class: "tabs", role: "group", "aria-label": "Show" });
-    [["all", "All"], ["venue", "Venues"], ["community", "Communities"]].forEach(function (t) {
+    [["all", "All"], ["community", "Communities"], ["event", "Events"], ["venue", "Venues"]].forEach(function (t) {
       tabs.append(el("button", {
         type: "button",
         "aria-pressed": state.kind === t[0] ? "true" : "false",
@@ -107,6 +107,7 @@
         const understood = result.understood || {};
         const read = [];
         if (understood.kind && understood.kind !== "all") read.push(understood.kind + "s");
+        if (understood.q) read.push("“" + understood.q + "”");
         if (understood.minCapacity) read.push(understood.minCapacity + "+ people");
         if (understood.freeOnly) read.push("free");
         if (understood.aspect) read.push(understood.aspect + " (from comments)");
@@ -132,9 +133,13 @@
         results.append(el("p", { class: "empty" }, "Nothing documented matches. Loosen a filter, or add a venue with a source."));
         return;
       }
+      const limit = 48;
       const grid = el("div", { class: "cards" });
-      result.matches.forEach(function (m) { grid.append(card(m)); });
+      result.matches.slice(0, limit).forEach(function (m) { grid.append(card(m)); });
       results.append(grid);
+      if (result.matches.length > limit) {
+        results.append(el("p", { class: "hint" }, "Showing " + limit + " of " + result.matches.length + ". Add a word to narrow it down."));
+      }
 
       if (result.toConfirm.length) {
         const extra = el("div", { class: "cards" });
@@ -158,8 +163,11 @@
     documented_host_relation: "Hosted here before",
   };
 
+  const kindLabel = { venue: "Venue", community: "Community", event: "Event · Luma" };
+
   function card(match) {
     const e = match.entity;
+    if (e.kind === "event") return eventCard(e, match);
     const facts = e.kind === "venue"
       ? [
           e.area,
@@ -168,7 +176,7 @@
         ]
       : [e.leads.join(", ")];
     return el("a", { class: "card", href: "discover.html?id=" + e.id }, [
-      el("p", { class: "card-k" }, [e.kind === "venue" ? "Venue" : "Community", ui.exampleTag(e)]),
+      el("p", { class: "card-k" }, [kindLabel[e.kind], ui.exampleTag(e)]),
       el("strong", { class: "card-title" }, e.name),
       el("p", { class: "card-facts" }, facts.filter(Boolean).join(" · ")),
       e.audience ? el("p", { class: "card-body" }, e.audience) : null,
@@ -180,6 +188,19 @@
           })))
         : null,
       el("p", { class: "card-source" }, "Source · " + e.sources[0].label),
+    ]);
+  }
+
+  function eventCard(e, match) {
+    return el("a", { class: "card", href: "discover.html?id=" + e.id }, [
+      el("p", { class: "card-k" }, kindLabel.event),
+      el("strong", { class: "card-title" }, e.name),
+      el("p", { class: "card-facts" }, ui.when(e)),
+      el("p", { class: "card-body" }, e.location || "Address shown to registered guests"),
+      match && match.reasonCodes.length
+        ? el("p", { class: "reasons" }, el("span", { class: "chip chip-ok" }, reasonText.topic_match))
+        : null,
+      el("p", { class: "card-source" }, "Source · Luma · " + e.calendars.map(function (c) { return c.name; }).join(", ")),
     ]);
   }
 
@@ -212,6 +233,7 @@
       }
       const e = result.entity;
       document.title = e.name + " — Same Room";
+      if (e.kind === "event") return showEvent(e);
       const rows = e.kind === "venue"
         ? [
             ["Area", e.area],
@@ -285,10 +307,10 @@
       }
 
       root.append(
-        el("p", { class: "eyebrow" }, [el("a", { href: "discover.html" }, "Discover"), " / " + (e.kind === "venue" ? "Venue" : "Community")]),
+        el("p", { class: "eyebrow" }, [el("a", { href: "discover.html" }, "Discover"), " / " + kindLabel[e.kind]]),
         el("article", { class: "sheet entity" }, [
           el("div", { class: "sheet-body" }, [
-            el("p", { class: "sheet-kicker" }, [e.kind === "venue" ? "Venue" : "Community", ui.exampleTag(e)]),
+            el("p", { class: "sheet-kicker" }, [kindLabel[e.kind], ui.exampleTag(e)]),
             el("h1", { class: "sheet-title" }, e.name),
             facts,
             el("p", { class: "reasons" }, e.sources.map(ui.sourceChip)),
@@ -300,6 +322,7 @@
           ]),
         ]),
         evidence,
+        e.kind === "community" ? lumaBlock(e, result) : null,
         el("section", { class: "band" }, [
           el("h2", { class: "label" }, e.kind === "venue" ? "Ask this venue" : "Write to the leads"),
           draftForm,
@@ -307,5 +330,71 @@
         ])
       );
     });
+  }
+
+  function lumaBlock(e, result) {
+    const cal = e.luma;
+    if (!cal) {
+      return el("section", { class: "band" }, [
+        el("h2", { class: "label" }, "On Luma"),
+        el("p", { class: "hint" }, e.lumaSearched
+          ? "No public Luma calendar found for " + e.name + ". Ask the lead for the link."
+          : "Luma not checked yet."),
+      ]);
+    }
+    const list = el("div", { class: "cards" });
+    result.upcomingEvents.slice(0, 6).forEach(function (ev) { list.append(eventCard(ev)); });
+    return el("section", { class: "band" }, [
+      el("h2", { class: "label" }, "On Luma"),
+      el("p", null, [
+        calendarLink(cal),
+        " · " + result.upcomingEvents.length + " upcoming, " + result.pastEventCount + " past",
+      ]),
+      el("p", { class: "hint" }, cal.match === "name"
+        ? "Found at " + cal.found + ". Matched by name; the lead has not confirmed it yet."
+        : cal.found),
+      result.upcomingEvents.length ? list : el("p", { class: "hint" }, "Nothing upcoming on the public calendar."),
+    ]);
+  }
+
+  function calendarLink(cal) {
+    const page = (cal.found.match(/luma\.com\/[\w-]+/) || [])[0];
+    return page ? el("a", { href: "https://" + page, rel: "noopener" }, cal.name) : el("strong", null, cal.name);
+  }
+
+  function showEvent(e) {
+    const rows = [
+      ["When", ui.when(e)],
+      ["Where", e.location || "Address shown to registered guests on Luma"],
+      ["Hosted by", e.hosts.join(", ")],
+      ["Calendar", e.calendars.map(function (c) { return c.name; }).join(", ")],
+      ["Capacity", null],
+      ["Price", null],
+    ];
+    const facts = el("dl", { class: "factlist" });
+    rows.forEach(function (r) {
+      facts.append(el("div", null, [
+        el("dt", null, r[0]),
+        el("dd", { class: r[1] ? null : "unknown" }, r[1] || "Not in the public feed"),
+      ]));
+    });
+    const communities = e.communityIds.map(function (id) { return window.SAME_ROOM.byId(id); }).filter(Boolean);
+    root.append(
+      el("p", { class: "eyebrow" }, [el("a", { href: "discover.html?kind=event" }, "Discover"), " / Event"]),
+      el("article", { class: "sheet entity" }, [
+        el("div", { class: "sheet-body" }, [
+          el("p", { class: "sheet-kicker" }, e.upcoming ? "Event · Luma" : "Past event · Luma"),
+          el("h1", { class: "sheet-title" }, e.name),
+          facts,
+          el("p", { class: "reasons" }, e.sources.map(ui.sourceChip)),
+          el("p", { class: "actions" }, [
+            e.url ? el("a", { class: "publish", href: e.url, rel: "noopener" }, "Open on Luma") : null,
+            communities.length
+              ? el("a", { class: "secondary", href: "desk.html?a=" + communities[0].id }, "Pair " + communities[0].name + " on the desk")
+              : null,
+          ]),
+        ]),
+      ])
+    );
   }
 })();
